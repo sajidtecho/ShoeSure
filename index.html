@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoeSure</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+
+        /* Navbar Styles */
+        .navbar { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 10px 40px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .logo { 
+            color: #ff0080; 
+            font-weight: bold; 
+            font-size: 24px; 
+            cursor: pointer; 
+            
+
+        }
+        .nav-links { 
+            display: flex; 
+            gap: 15px; 
+        }
+        .nav-links a { 
+            text-decoration: none; 
+            color: black; 
+            font-weight: 500; 
+            margin-right: 50px;
+        }
+       
+        .profile-dropdown { 
+            position: relative; 
+            display: inline-block; 
+        }
+        .profile-content { 
+            display: none; 
+            position: absolute; 
+            background: white; 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+            min-width: 150px; 
+            margin-left: 20px;
+           
+        }
+        .profile-dropdown:hover .profile-content { 
+            display: block; 
+        }
+        .profile-content a { 
+            display: block; 
+            padding: 10px; 
+            text-decoration: none; 
+            color: black; 
+            min-width: 100px; 
+            
+        }
+        
+        
+        .hamburger { display: none; 
+            flex-direction: column; 
+            gap: 5px; cursor: pointer; 
+        }
+        .hamburger div { 
+            width: 25px; 
+            height: 3px; 
+            background-color: #ff0080; 
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 60px; 
+                right: 20px; 
+                background-color: white; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+                width: 200px; 
+                padding: 10px 0; 
+            }
+
+            .nav-links.show { display: flex; }
+            .hamburger { display: flex; }
+        }
+        /* Hero section */
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        .content {
+            width: 50%;
+            padding-right: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #ff66b2;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        
+        .image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+        }
+
+        .image-section img {
+            width: 480px; 
+            max-width: 100%; 
+            height: auto; 
+            margin-right: 10px; 
+            margin-top: 50px;
+        }
+        .cta-button {
+            display: inline-block;  
+            background-color: #ff66b2; 
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px; 
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #8B4513; 
+        }
+        
+        /* Services */
+        .services { 
+            text-align: center;
+            padding: 50px 20px;
+            background: #f8f8f8;
+            margin-top: 10px;
+        }
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .service-card { 
+            width: 300px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .service-card img {
+            width: 100%;
+            height: 190px; 
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .interaction-buttons {
+            margin-top: 10px;
+        }
+
+        .interaction-buttons button {
+            background: #FFD700;
+            color: #333;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .interaction-buttons button:hover {
+            background: #E5C100;
+        }
+        .service-card h3 {
+            margin: 15px 0;
+            font-size: 20px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .service-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Custome queote container */
+        .quote-container {
+            text-align: center;
+        }
+        .quote-container h1{
+            color: black;
+            margin: 30px;
+        }
+        .quote-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .quote-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .quote-item img {
+            width: 40px;
+            height: 40px;
+        }
+        .soon-badge {
+            background-color: #b59f79;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 12px;
+            position: relative;
+            top: 8px;
+        }
+        .quote-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Home Section and Shoe Categories */
+        .home {
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 0px;
+        }
+
+        .shoe-category-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .shoe-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .shoe-card:hover {
+            transform: scale(1.05);
+        }
+
+        .shoe-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        /* About section */
+
+        #about {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #about h2 {
+            color: #ff6600;
+        }
+
+        #about p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+       
+        
+        .stars {
+            color: gold;
+        }
+
+         .section-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px; 
+            padding: 20px;
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode {
+            background: black;
+            color: white;
+        }
+        .toggle-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            border-radius: 20px;
+            background: #DAA520;
+            cursor: pointer;
+        } 
+        
+        /* Footer Styling */
+        footer {
+            background-color: #222; /* Dark background */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            background: white; 
+            color: #222;
+            font-size: 22px;
+            text-align: center;
+            border-radius: 50%;
+            margin: 0 10px;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        /* WhatsApp specific styling */
+        .social-icons a:nth-child(4) {
+            color: #25D366;  
+        }
+
+        /* Hover Effect */
+        .social-icons a:hover {
+            background: #ff6600; 
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .social-icons a {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+                margin: 0 5px;
+            }
+        }
+        
+        
+</style>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+</script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">ShoeSure</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="Contact.html">Contact</a>
+            <div class="profile-dropdown">
+                <a href="#profile">Menu</a>
+                <div class="profile-content">
+                    <a href="#">Orders</a>
+                    <a href="#">Wishlist</a>
+                    <a href="#">Coupons</a>
+                    <a href="#">Saved <br>Cards</a>
+                    <a href="#">Saved <br>VPA</a>
+                    <a href="#">Saved <br>Addresses</a>
+                </div>
+        </div>
+        <div class="profile-dropdown">
+            <a href="#profile">Profile</a>
+            <div class="profile-content">
+                <a href="login/customer login.html">Customer <br>login</a>
+                <a href="login/seller login.html">Seller <br>login</a>
+                <a href="login/Artisans login.html">Artisans <br>login</a>
+            </div>
+    </div>  
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+<!-- Hero section -->
+    <section class="hero-section">
+        <div class="content">
+            <h1>Step into Style, Crafted with Care!</h1>
+            <p>Connect with skilled cobblers and Sellers to design, customize, or restore your favorite shoes — all at pocket-friendly prices!</p>
+            <a href="customization/Customization page.html" class="cta-button">Explore Customization →</a>
+            <a href="customization/Artisans Page.html" class="cta-button">Explore Renovation →</a>
+
+        </div>
+        <div class="image-section">
+            <img src="image/Surprosed man.png" alt="ShoeSure 0% Commission">
+        </div>
+    </section>
+     <!--Service section  -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+          
+            <!-- Shoe Renovation Card -->
+            <div class="service-card" onclick="redirectToPage('customization/Artisans page.html')">
+                <img src="image/Renovation.png" alt="Shoe Renovation">
+                <h3>Shoe Renovation</h3>
+                <p>Give your shoes a fresh new look.</p>  
+            </div>
+            
+            <!-- Shoe Customization Card -->
+            <div class="service-card" onclick="redirectToPage('customization/Customization page.html')">
+                <img src="image/Customization.png" alt="Shoe Customization">
+                <h3>Customization</h3>
+                <p>Personalize your footwear to match your style.</p>
+            </div>
+            
+            <!-- Seller Card -->
+            <div class="service-card" onclick="redirectToPage('Seller.html')">
+                <img src="image/Seller.png" alt="Seller">
+                <h3>Become a Seller</h3>
+                <p>Sell your products and reach more customers.</p>
+            </div>
+            
+            <div class="service-card" onclick="redirectToPage('customization/Artisans Page.html')">
+                <img src="image/Cobbler.png" alt="Cobbler">
+                <h3>Become a Artisans</h3>
+                <p>Meet our highest-rated Artisans with excellent craftsmanship.</p>
+            </div>
+        </div>
+    </section>
+
+        
+    <!-- Top Rated Artisans Section -->
+    <section id="top-rated-Artisans" class="services">
+        <h2>Top Rated Artisans</h2>
+        <div class="service-container">
+          
+            <!-- Top Rated Cobbler Card -->
+            <div class="service-card">
+                <img src="image/Cobbler.png" alt="Top Rated Artisans">
+                <h3>Artisans 1</h3><br>
+                <p>Our best-performing artisans known for outstanding service.</p><br>
+                <li>15 years of experiances</li>
+                <li>Address: Greater Noida</li>
+                <li>Expertise:Renovatio and customization</li>
+                <div class="interaction-buttons">
+                    <button onclick="startChat()">Chat</button>
+                    <button onclick="startVideoCall()">Video Call</button>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="image/Cobbler.png" alt="Top Rated Artisan">
+                <h3>Artisan 2</h3><br>
+                <p>Our best-performing Artisans known for outstanding service.</p><br>
+                <li>15 years of experiances</li>
+                <li>Address: Greater Noida</li>
+                <li>Expertise:Renovatio and customization</li>
+                <div class="interaction-buttons">
+                    <button onclick="startChat()">Chat</button>
+                    <button onclick="startVideoCall()">Video Call</button>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="image/Cobbler.png" alt="Top Rated Artisan">
+                <h3>Artisan 2</h3><br>
+                <p>Our best-performing Artisans known for outstanding service.</p><br>
+                <li>15 years of experiances</li>
+                <li>Address: Greater Noida</li>
+                <li>Expertise:Renovatio and customization</li>
+                <div class="interaction-buttons">
+                    <button onclick="startChat()">Chat</button>
+                    <button onclick="startVideoCall()">Video Call</button>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="image/Cobbler.png" alt="Top Rated Artisan">
+                <h3>Artisan 2</h3><br>
+                <p>Our best-performing Artisans known for outstanding service.</p><br>
+                <li>15 years of experiances</li>
+                <li>Address: Greater Noida</li>
+                <li>Expertise:Renovatio and customization</li>
+                <div class="interaction-buttons">
+                    <button onclick="startChat()">Chat</button>
+                    <button onclick="startVideoCall()">Video Call</button>
+                </div>
+            </div>
+    </div>
+    </section>
+    
+    <section id="home" class="home">
+        <!-- Shoe Categories -->
+        <h2>Explore Shoe Types</h2>
+        <div class="shoe-category-container">
+            <div class="shoe-card" onclick="redirectToPage('Market place/Slipper.html')">
+                <img src="image/slipper.png" alt="Slippers">
+                <h3>Slippers</h3>
+            </div>
+        
+            <div class="shoe-card" onclick="redirectToPage('Market place/Croc.html')">
+                <img src="image/crocs.png" alt="Crocs">
+                <h3>Crocs</h3>
+            </div>
+        
+            <div class="shoe-card" onclick="redirectToPage('Market place/Shoe.html')">
+                <img src="image/Running shoe.png" alt="Running Shoes">
+                <h3>Running Shoes</h3>
+            </div>
+        
+            <div class="shoe-card" onclick="redirectToPage('Market place/FormalShoe.html')">
+                <img src="image/Formal shoe.png" alt="Formal Shoes">
+                <h3>Formal Shoes</h3>
+            </div>
+        
+            <div class="shoe-card" onclick="redirectToPage('Market place/Sneaker.html')">
+                <img src="image/Sneaker.png" alt="Sneakers">
+                <h3>Sneakers</h3>
+            </div>
+        </div> 
+    </section>
+
+    <section id="best-services" class="services">
+        <h2>Top Rated Sellers</h2>
+        <div class="service-container">
+          
+            <!-- Best seller Card -->
+            <div class="service-card" onclick="redirectToPage('')">
+                <img src="image/Seller.png" alt="Best seller">
+                <h3>Mahalaxmi Footwear</h3>
+                <li>Address: Jagat Farm Market</li>
+                <h4>Available Items</h4> 
+                <ol>Women Footwear</ol>
+                <ol>Mens Footwear</ol> 
+            </div>
+            <div class="service-card" onclick="redirectToPage('')">
+                <img src="image/Seller.png" alt="Best Seller">
+                <h3>Campus Exclusive Store</h3>
+                <p>Our top-selling vendor providing premium footwear.</p>
+            </div>
+            <div class="service-card" onclick="redirectToPage('')">
+                <img src="image/Seller.png" alt="Best Seller">
+                <h3>RedTape Exclusive Store</h3>
+                <p>Our top-selling vendor providing premium footwear.</p>
+                <li>Address: Gamma 1</li>
+            </div>
+            
+            <div class="service-card" onclick="redirectToPage('')">
+                <img src="image/Seller.png" alt="Best Seller">
+                <h3>Puma Exclusive Store</h3>
+                <p>Our top-selling vendor providing premium footwear.</p>
+                <li>Address: The grand Venice mall</li>
+            </div>
+        </div>
+    </section>
+      
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About ShoeSure</h2><br>
+        <p>
+            <h1>🚀 Our Mission</h1><br>
+            At ShoeSure, we are on a mission to empower local cobblers by providing them with a dedicated digital platform where they can showcase their craftsmanship and expertise. 🛠️👞
+            
+            We aim to connect skilled artisans with customers looking for shoe renovation, customization, and repair services—whether it's leather, non-leather, or any specialty footwear. 💼✨ Our goal is to ensure that no shoe goes to waste, and every customer gets the best service at pocket-friendly prices.
+            
+            Through ShoeSure, we are reviving traditional skills while offering modern, digital solutions to help cobblers grow their businesses and reach a wider audience. 🌍📢</p>
+        <p><br>  
+            
+            <h1>🌍 Our Goal</h1><br>
+            Our vision extends beyond just providing a service platform. We are committed to:
+            
+            ✅ Promoting locally made products and giving them a global marketplace where quality meets authenticity. 🏭🔍
+            ✅ Encouraging sustainable shopping by reducing footwear waste through expert repairs and customizations. ♻️👟
+            ✅ Bridging the gap between traditional artisans and modern consumers, ensuring that craftsmanship never fades away. 🤝🎨
+            
+            With ShoeSure, we are not just creating a business—we are building a community of trust, quality, and authenticity. Join us in making a difference! 🚀💡</p>
+    </section>
+   
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+    
+        <script>
+            // Dark Mode Toggle
+            document.getElementById("darkModeToggle").addEventListener("click", function() {
+                document.body.classList.toggle("dark-mode");
+            });
+            
+        </script>
+        <script>
+            function redirectToPage(page) {
+                window.location.href = page;
+            }
+        </script>
+        <script>
+            // Functions for Chat and Video Call (Redirect to respective pages)
+            function startChat() {
+                window.location.href = 'Contact.html';
+                window.open("Contact.html", "_blank");
+            }
+            
+            function startVideoCall() {
+                window.location.href = 'videocall.html';
+            }
+
+            function placeOrder(productId) {
+            let size = document.getElementById('shoe-size').value;
+            let customerName = prompt("Enter your name:");
+
+            fetch('place_order.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `product_id=${productId}&customer_name=${customerName}&size=${size}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    window.location.href = "razorpay_payment.php";  // Redirect to Razorpay
+                } else {
+                    alert("Error placing order!");
+                }
+            });
+        }
+
+        </script>
+    
+    <footer class="footer">
+        <p>&copy; 2025 ShoeSure. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="facebook (1).png"><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href="instagram.png"><i class="fab fa-instagram"></i></a>
+            <a href="whatsapp (1).png"><i class="fab fa-whatsapp"></i></a>  <!-- WhatsApp Icon -->
+        </div>
+        
+
+    </footer>
+    
+</body>
+</html>

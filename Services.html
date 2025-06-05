@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Service Request Form</h2>
+        <form id="serviceForm">
+            <label for="shopName">Artisans Code</label>
+            <input type="text" id="artisans code" required>
+
+            <label for="serviceType">Select Service:</label>
+            <select id="serviceType" required>
+                <option value="Renovation">Renovation</option>
+                <option value="Sole Repairing">Sole Repairing</option>
+                <option value="Stitching">Stitching</option>
+                <option value="Polishing">Polishing</option>
+                <option value="Other">Other (Explain Below)</option>
+            </select>
+
+            <label for="details">Explain Your Requirement (Optional):</label>
+            <textarea id="details" rows="3"></textarea>
+
+            <label for="visitType">Visit Type:</label>
+            <select id="visitType" onchange="showPickupDetails()">
+                <option value="Self Visit">Self Visit</option>
+                <option value="Pickup">Pickup</option>
+            </select>
+
+            <div id="pickupDetails" class="hidden">
+                <p>Pickup is free for the first 5 km. Additional ₹5/km will be charged.</p>
+            </div>
+
+            <label for="imageUpload">Upload Image (Optional):</label>
+            <input type="file" id="imageUpload" accept="image/*">
+
+            <label for="location">Your Location:</label>
+            <input type="text" id="location" required>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+
+        <p id="confirmationMessage" class="hidden"></p>
+    </div>
+
+    <script>
+        function showPickupDetails() {
+            const visitType = document.getElementById('visitType').value;
+            const pickupDetails = document.getElementById('pickupDetails');
+            if (visitType === 'Pickup') {
+                pickupDetails.classList.remove('hidden');
+            } else {
+                pickupDetails.classList.add('hidden');
+            }
+        }
+
+        function submitForm() {
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            const visitType = document.getElementById('visitType').value;
+            let pickupTime = visitType === 'Pickup' ? 'Your pickup is scheduled within 30 minutes.' : 'Your visit is confirmed.';
+
+            confirmationMessage.innerHTML = `Thank you for your request! ${pickupTime}<br>Be relaxed, we will deliver your new shoe within 30 minutes.`;
+            confirmationMessage.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

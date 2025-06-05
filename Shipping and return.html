@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping & Return Policy</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+
+        /* Navbar Styles */
+        .navbar { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 10px 40px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            margin-top: 20px;
+        }
+
+        .logo { 
+            color: #ff0080; 
+            font-weight: bold; 
+            font-size: 24px; 
+            cursor: pointer; 
+        }
+        .nav-links { 
+            display: flex; 
+            gap: 20px; 
+        }
+        .nav-links a { 
+            text-decoration: none; 
+            color: black; 
+            font-weight: 500; 
+        }
+        .buttons { 
+            display: flex; 
+            gap: 10px; 
+        }
+        .login-btn { 
+            border: 1px solid #ff0080; 
+            color: #ff0080; 
+            background: none; 
+            padding: 8px 20px; 
+            border-radius: 5px; 
+            cursor: pointer;
+            font-weight: bold; 
+        }
+        .start-btn { 
+            background-color: #ff0080; 
+            color: white; border: none; 
+            padding: 8px 20px; border-radius: 5px; 
+            cursor: pointer; 
+        }
+        .login-btn:hover { 
+            background-color: #fff0f5; 
+        }
+        .start-btn:hover { 
+            background-color: #e60073; 
+        }
+
+        .hamburger { display: none; 
+            flex-direction: column; 
+            gap: 5px; cursor: pointer; 
+        }
+        .hamburger div { 
+            width: 25px; 
+            height: 3px; 
+            background-color: #ff0080; 
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 60px; 
+                right: 20px; 
+                background-color: white; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+                width: 200px; 
+                padding: 10px 0; 
+            }
+
+            .nav-links.show { display: flex; }
+            .hamburger { display: flex; }
+        }
+        .pricing-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        .content {
+            width: 50%;
+            padding-right: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .notice {
+            margin: 20px 0;
+            background-color: #ffe4ec;
+            padding: 10px 15px;
+            border-radius: 6px;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .notice .badge {
+            background-color: #e91e63;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .notice a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+
+        .notice a:hover {
+            text-decoration: underline;
+        }
+
+        .mobile-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .mobile-input input {
+            width: 70%;
+            padding: 10px;
+            border: 2px solid #e91e63;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .mobile-input button {
+            background-color: #e91e63;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .mobile-input button:hover {
+            background-color: #c2185b;
+        }
+
+        .image-section {
+            width: 40%;
+        }
+
+        .image-section img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .shipping-section {
+            display: flex;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+            align-items: center;
+        }
+
+        .shipping-info {
+            width: 60%;
+            padding-right: 40px;
+        }
+
+        .shipping-info h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .shipping-info h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .shipping-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .bullet {
+            color: #e91e63;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .shipping-image img {
+            width: 300px;
+            border-radius: 12px;
+        }
+        /* delivery section */
+        .delivery-section {
+            display: flex;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+        }
+
+        .delivey-info {
+            width: 60%;
+            padding-right: 40px;
+        }
+
+        .delivery-info h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .delivery-info p {
+            color: #666;
+            line-height: 1.6;
+            
+        }
+
+        .delivery-details {
+            display: flex;
+            align-items: center;
+            background-color: #f0f4ff;
+            padding: 20px;
+            border-radius: 12px;
+            width: 60%;
+            gap: 20px;
+            margin-left: 80px;
+            
+        }
+
+        .detail-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .detail-item img {
+            width: 50px;
+            margin-bottom: 30px;
+        }
+
+        .divider {
+            width: 1px;
+            background-color: #ccc;
+            height: 80px;
+        }
+
+    </style>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+</script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">ShoeSure</div>
+        <div class="nav-links">
+            <a href="#">Sell Online</a>
+            <a href="How it work.html">How it works</a>
+            <a href="Pricing and Commission.html">Pricing & Commission</a>
+            <a href="Shipping and return.html">Shipping & Returns</a>
+            <a href="#">Grow Business</a>
+            <a href="#">Don’t have GST?</a>
+        </div>
+        <div class="buttons">
+            <a href="login/seller login.html">
+                <button class="login-btn">Login</button>
+            </a>
+            <button class="start-btn">Start Selling</button>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <section class="pricing-section">
+        <div class="content">
+            <h1>ShoeSure Shipping, Delivery & Returns Policy</h1>
+            <p>Get your products delivered to crores of customers with the lowest shipping cha</p>
+
+            <div class="notice">
+                <span class="badge">New!</span> Don't have a GSTIN or a Composition GSTIN? 
+                You can still sell on ShoeSure. Click <a href="#">here</a> to know more.
+            </div>
+
+            <div class="mobile-input">
+                <input type="text" placeholder="+91 Enter Your Mobile Number">
+                <button>Start Selling</button>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <img src="image/Delivery and return.png" alt="ShoeSure 0% Commission">
+        </div>
+    </section>
+
+    <div class="shipping-section">
+        <div class="shipping-info">
+            <h1>Deliver products <br>across India</h1>
+            <p>
+                ShoeSure ensures quick and hassle-free delivery of all your products across India
+            </p>
+        </div>
+        </div>
+        <div class="delivery-section">
+            <div class="delivery-info">
+                <h2>Deliver products across India</h2>
+                <p>
+                   ShoeSure ensures quick and hassle-free <br>delivery of all your products across India
+                </p>
+            </div>
+            <div class="delivery-details">
+                <div class="detail-item">
+                    <img src="image/Shipping image.png" alt="Shipping Icon">
+                    <p>Lowest Shipping Charges</p>
+                </div>
+    
+                <div class="divider"></div>
+    
+                <div class="detail-item">
+                    <img src="image/Map.png" alt="Map Icon">
+                    <p>19000+ Pincode Served</p>
+                </div>
+
+                <div class="divider"></div>
+    
+                <div class="detail-item">
+                    <img src="image/commission.png" alt="Commission Icon">
+                    <p>0% Commission</p>
+                </div>
+
+                
+
+            </div>
+</body>
+</html>

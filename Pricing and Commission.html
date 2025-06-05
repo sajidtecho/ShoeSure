@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoeSure Pricing & Commission</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        
+        /* Navbar Styles */
+        .navbar { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 10px 40px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .logo { color: #ff0080; 
+            font-weight: bold; 
+            font-size: 24px; 
+            cursor: pointer; 
+        }
+        .nav-links { 
+            display: flex; 
+            gap: 20px; 
+        }
+        .nav-links a { 
+            text-decoration: none; 
+            color: black; 
+            font-weight: 500; 
+        }
+        .buttons { 
+            display: flex; 
+            gap: 10px; 
+        }
+        .login-btn { 
+            border: 1px solid #ff0080; 
+            color: #ff0080; 
+            background: none; 
+            padding: 8px 20px; 
+            border-radius: 5px; 
+            cursor: pointer;
+            font-weight: bold; 
+        }
+        .start-btn { 
+            background-color: #ff0080; 
+            color: white; border: none; 
+            padding: 8px 20px; border-radius: 5px; 
+            cursor: pointer; 
+        }
+        .login-btn:hover { 
+            background-color: #fff0f5; 
+        }
+        .start-btn:hover { 
+            background-color: #e60073; 
+        }
+
+        .hamburger { display: none; 
+            flex-direction: column; 
+            gap: 5px; cursor: pointer; 
+        }
+        .hamburger div { 
+            width: 25px; 
+            height: 3px; 
+            background-color: #ff0080; 
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 60px; 
+                right: 20px; 
+                background-color: white; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+                width: 200px; 
+                padding: 10px 0; 
+            }
+
+            .nav-links.show { display: flex; }
+            .hamburger { display: flex; }
+        }
+
+        /* Seller Section Styles */
+        .seller-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff5f8;
+            padding: 40px ;
+            flex-wrap: wrap;
+        }
+
+        .content {
+            max-width: 50%;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #000;
+        }
+
+        .highlight {
+            color: #ff00a6;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .highlight-box {
+            background: #fff;
+            border: 2px solid #ff00a6;
+            padding: 10px 15px;
+            display: inline-block;
+            border-radius: 20px;
+            margin-top: 15px;
+        }
+
+        .new-tag {
+            color: #ff00a6;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .input-box {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between input and button */
+            margin-top: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .input-box span {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .input-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+
+        .start-btn-seller {
+            background-color: #ff00a6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 30px;
+            width: auto;
+            margin-top: 10px;
+            cursor: pointer;
+            white-space: nowrap; /* Prevents text from breaking */
+        }
+
+        /* Image Section - Improved Alignment */
+        .image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Ensures image aligns with content */
+            max-width: 100%; /* Keeps image aligned with content */
+        }
+
+        .image-section img {
+            width: 800px; /* Increased size */
+            max-width: 100%; /* Ensures responsiveness */
+            height: auto; /* Maintains aspect ratio */
+            margin-right: 60px; /* Added right margin */
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .seller-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .content,.image-section {
+                max-width: 100%;
+            }
+
+            .image-section img {
+                width: 100%;
+                margin-top: 20px auto;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .pricing-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        .content {
+            width: 50%;
+            padding-right: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .notice {
+            margin: 20px 0;
+            background-color: #ffe4ec;
+            padding: 10px 15px;
+            border-radius: 6px;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .notice .badge {
+            background-color: #e91e63;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .notice a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+
+        .notice a:hover {
+            text-decoration: underline;
+        }
+
+        .mobile-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .mobile-input input {
+            width: 70%;
+            padding: 10px;
+            border: 2px solid #e91e63;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .mobile-input button {
+            background-color: #e91e63;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .mobile-input button:hover {
+            background-color: #c2185b;
+        }
+
+        .image-section {
+            width: 40%;
+        }
+
+        .image-section img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .benefits-section {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .benefits-section h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .benefits-section p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .benefit-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .benefit-card img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .benefit-card h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        /* Payment section */
+        .payment-section {
+            display: flex;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+        }
+
+        .payment-info {
+            width: 60%;
+            padding-right: 40px;
+        }
+
+        .payment-info h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .payment-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .payment-details {
+            display: flex;
+            align-items: center;
+            background-color: #f0f4ff;
+            padding: 20px;
+            border-radius: 12px;
+            width: 40%;
+            gap: 20px;
+        }
+
+        .detail-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .detail-item img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            width: 1px;
+            background-color: #ccc;
+            height: 60px;
+        }
+
+        .shipping-section {
+            display: flex;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+            align-items: center;
+        }
+
+        .shipping-info {
+            width: 60%;
+            padding-right: 40px;
+        }
+
+        .shipping-info h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .shipping-info h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .shipping-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .bullet {
+            color: #e91e63;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .shipping-image img {
+            width: 300px;
+            border-radius: 12px;
+        }
+
+        /* return info */
+        .return-section {
+            display: flex;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+            align-items: center;
+        }
+
+        .return-info {
+            width: 60%;
+            padding-left: 40px;
+        }
+
+        .return-info h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .return-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .bullet {
+            color: #e91e63;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .return-image img {
+            width: 300px; /* Image size matches the shipping section */
+            border-radius: 12px;
+        }
+        /* cancellation policy */
+        .cancellation-section {
+            display: flex;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+            align-items: center;
+        }
+
+        .cancellation-info {
+            width: 60%;
+            padding-right: 40px;
+        }
+
+        .cancellation-info h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .cancellation-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .bullet {
+            color: #e91e63;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .cancellation-image img {
+            width: 300px; /* Matches the shipping and return sections */
+            border-radius: 12px;
+        }
+
+        /* return to origin */
+        .rto-section {
+            display: flex;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+            align-items: center;
+        }
+
+        .rto-info {
+            width: 60%;
+            padding-left: 40px; /* Ensures spacing between text and image */
+        }
+
+        .rto-image {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .rto-image img {
+            width: 100%; 
+            max-width: 250px; /* Maintains a size similar to the example */
+            border-radius: 12px;
+        }
+
+        .rto-info h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .rto-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .bullet {
+            color: #e91e63;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* Sell section */
+        .sell-section {
+            display: flex;
+            background-color: #f8f9fa; /* Light grey background */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+            align-items: center;
+        }
+
+        .sell-info {
+            width: 50%;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .sell-details {
+            width: 50%;
+        }
+
+        .sell-details p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .sell-btn {
+            background-color: #e91e63; /* Pink Button */
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .sell-btn:hover {
+            background-color: #d81b60; /* Darker pink on hover */
+        }
+
+        /* Footer */
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .footer-left,
+        .footer-middle,
+        .footer-right {
+            width: 30%;
+        }
+
+        .brand-name {
+            color: #e91e63;
+            font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .start-btn {
+            background-color: #e91e63;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .start-btn:hover {
+            background-color: #d81b60;
+        }
+
+        .footer-middle h3,
+        .footer-right h3 {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-middle ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-middle li {
+            margin-bottom: 5px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .footer-middle .highlight {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .footer-right .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .footer-right .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #ffc0cb;
+            color: #e91e63;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #888;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 20px;
+        }
+
+
+</style>
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+</script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">ShoeSure</div>
+        <div class="nav-links">
+            <a href="#">Sell Online</a>
+            <a href="#">How it works</a>
+            <a href="#">Pricing & Commission</a>
+            <a href="#">Shipping & Returns</a>
+            <a href="#">Grow Business</a>
+            <a href="#">Don’t have GST?</a>
+        </div>
+        <div class="buttons">
+            <a href="seller login.html">
+                <button class="login-btn">Login</button>
+            </a>
+            <button class="start-btn">Start Selling</button>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <section class="pricing-section">
+        <div class="content">
+            <h1>Pricing & Commission</h1>
+            <p>ShoeSure offers <span class="highlight">0% Commission</span> for artisans and cobblers on all handmade and custom shoe designs, ensuring you earn the most profit from your sales.</p>
+
+            <div class="notice">
+                <span class="badge">New!</span> Don't have a GSTIN or a Composition GSTIN? 
+                You can still sell on ShoeSure. Click <a href="#">here</a> to know more.
+            </div>
+
+            <div class="mobile-input">
+                <input type="text" placeholder="+91 Enter Your Mobile Number">
+                <button>Start Selling</button>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <img src="image/commission image.png" alt="ShoeSure 0% Commission">
+        </div>
+    </section>
+
+    <div class="benefits-section">
+        <div class="benefits-container">
+            <div class="benefit-card">
+                <img src="image/Commission icon.png" alt="Icon">
+                <h3>Zero Commission Fees</h3>
+                <p>
+                    Cobblers keep 100% of their profit with no hidden charges or commission fees.
+                </p>
+            </div>
+    
+            <div class="benefit-card">
+                <img src="image/cancellation.png" alt="Icon">
+                <h3>No Penalty Charges</h3>
+                <p>
+                    No charges for delayed dispatch or cancellations to support small sellers.
+                </p>
+            </div>
+    
+            <div class="benefit-card">
+                <img src="image/customization order.png" alt="Icon">
+                <h3>Customized Orders</h3>
+                <p>
+                    Accept personalized shoe customization requests directly from customers.
+                </p>
+            </div>
+    
+            <div class="benefit-card">
+                <img src="image/ease of bussiness icon.png" alt="Icon">
+                <h3>Easy Business Management</h3>
+                <p>
+                    Manage orders, chat with customers, and track earnings from one platform.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="payment-section">
+        <div class="payment-info">
+            <h2>Payment Cycle</h2>
+            <p>
+                The settlement amount is securely deposited directly into your 
+                bank account following a 7-day payment cycle from order delivery, 
+                including cash on delivery orders. You can view your deposited 
+                balance and the upcoming payments on the ShoeSure Supplier Panel.
+            </p>
+        </div>
+
+        <div class="payment-details">
+            <div class="detail-item">
+                <img src="image/Callender.png" alt="Calendar Icon">
+                <p>7-day payment cycle</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="detail-item">
+                <img src="image/Security.png" alt="Secure Icon">
+                <p>Secured payment in your account</p>
+            </div>
+        </div>
+    </div>
+    <div class="shipping-section">
+        <div class="shipping-info">
+            <h2>Quick Facts on Shipping & Delivery</h2>
+            <h3>Shipping</h3>
+            <p>
+                <span class="bullet">●</span> ShoeSure's shipping service allows you to focus on 
+                selling while we handle the shipping and delivery process. 
+                With only <b>18% GST</b> on shipping charges, you can sell your 
+                products to thousands of customers, schedule deliveries 
+                with access to numerous local couriers, and have the 
+                flexibility to set your own prices.
+            </p>
+        </div>
+
+        <div class="shipping-image">
+            <img src="image/Packing of box.png" alt="Woman packing a box">
+        </div>
+    </div>
+
+    <div class="return-section">
+        <div class="return-image">
+            <img src="image/Return image.png" alt="Return Policy">
+        </div>
+        <div class="return-info">
+            <h3><b>ShoeSure Return Policy</b></h3>
+            <p>
+                <span class="bullet">•</span> The ShoeSure Supplier Panel will provide visibility for returns on your inventory. 
+                This means you can make adjustments in real-time and deliver a great customer experience 
+                and minimize your returns. Use the Panel to manage your returns and reduce your processing costs.
+            </p>
+        </div>
+    </div>
+
+    <div class="cancellation-section">
+        <div class="cancellation-info">
+            <h3><b>ShoeSure Cancellation Policy</b></h3>
+            <p>
+                <span class="bullet">•</span> ShoeSure
+                charges 0 penalties for supplier cancellations and auto cancellations. For situations when a supplier is not able to fulfil an order due to lack of inventory or any other unforeseen situation, suppliers can conduct their business tension-free on Meesho without worrying about the fear of paying penalties.
+            </p>
+        </div>
+
+        <div class="cancellation-image">
+            <img src="image/Cancellation image.png" alt="Cancellation-policy">
+        </div>
+    </div>
+
+    <div class="rto-section">
+        <div class="rto-image">
+            <img src="image/Return to origin.png" alt="Return to Origin">
+        </div>
+        <div class="rto-info">
+            <h3><b>Return to Origin</b></h3>
+            <p>
+                <span class="bullet">•</span> The shipping partner will try three times to reach the customer. 
+                If the customer does not accept the product, it will be returned to you. 
+                Meesho will not charge a return shipping fee for any RTOs.
+            </p>
+        </div>
+    </div>
+    <div class="sell-section">
+        <div class="sell-info">
+            <h3>Sell Products Online <br>at 0% Commission on ShoeSure</h3>
+        </div>
+        <div class="sell-details">
+            <p>
+                Join the fastest growing e-commerce platform in India and sell to crores of users and grow your business.
+            </p>
+            <button class="sell-btn">Start Selling</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2 class="brand-name">ShoeSure</h2>
+                <p>Sell your products to crores of customers on ShoeSure at 0% commission</p>
+                <button class="start-btn">Start Selling</button>
+            </div>
+
+            <div class="footer-middle">
+                <h3>Sell on ShoeSure</h3>
+                <ul>
+                    <li>Sell Online</li>
+                    <li>Pricing & Commission</li>
+                    <li>How it works</li>
+                    <li>Shipping & Returns</li>
+                    <li>Grow Your Business</li>
+                    <li class="highlight">Learning Hub</li>
+                    <li>ShoeSure Ads</li>
+                    <li>Shop Online on ShoeSure</li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h3>Contact Us</h3>
+                <p>sell@shoesure.com</p>
+                <div class="social-icons">
+                    <a href="image/instagram icon.png" class="icon"><i class="fab fa-instagram"></i></a>
+                    <a href="image/facebook.png" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 ShoeSure Inc. All Rights Reserved.
+        </div>
+    </footer>
+    
+    
+    
+</body>
+</html>

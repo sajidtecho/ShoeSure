@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoeSure - Navbar & Seller Section</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+
+        /* Navbar Styles */
+        .navbar { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 10px 40px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .logo { color: #ff0080; 
+            font-weight: bold; 
+            font-size: 24px; 
+            cursor: pointer; 
+        }
+        .nav-links { 
+            display: flex; 
+            gap: 20px; 
+        }
+        .nav-links a { 
+            text-decoration: none; 
+            color: black; 
+            font-weight: 500; 
+        }
+        .buttons { 
+            display: flex; 
+            gap: 10px; 
+        }
+        .login-btn { 
+            border: 1px solid #ff0080; 
+            color: #ff0080; 
+            background: none; 
+            padding: 8px 20px; 
+            border-radius: 5px; 
+            cursor: pointer;
+            font-weight: bold; 
+        }
+        .start-btn { 
+            background-color: #ff0080; 
+            color: white; border: none; 
+            padding: 8px 20px; border-radius: 5px; 
+            cursor: pointer; 
+        }
+        .back-btn {
+            background-color: #ff0080; 
+            color: white; border: none; 
+            padding: 8px 20px; border-radius: 5px; 
+            cursor: pointer;
+        }
+        .login-btn:hover { 
+            background-color: #fff0f5; 
+        }
+        .start-btn:hover { 
+            background-color: #e60073; 
+        }
+
+        .hamburger { display: none; 
+            flex-direction: column; 
+            gap: 5px; cursor: pointer; 
+        }
+        .hamburger div { 
+            width: 25px; 
+            height: 3px; 
+            background-color: #ff0080; 
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 60px; 
+                right: 20px; 
+                background-color: white; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+                width: 200px; 
+                padding: 10px 0; 
+            }
+
+            .nav-links.show { display: flex; }
+            .hamburger { display: flex; }
+        }
+/* Seller Section Styles */
+.seller-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff5f8;
+            padding: 40px ;
+            flex-wrap: wrap;
+        }
+
+        .content {
+            max-width: 50%;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #000;
+        }
+
+        .highlight {
+            color: #ff00a6;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .highlight-box {
+            background: #fff;
+            border: 2px solid #ff00a6;
+            padding: 10px 15px;
+            display: inline-block;
+            border-radius: 20px;
+            margin-top: 15px;
+        }
+
+        .new-tag {
+            color: #ff00a6;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .input-box {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between input and button */
+            margin-top: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .input-box span {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .input-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+
+        .start-btn-seller {
+            background-color: #ff00a6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 30px;
+            width: auto;
+            margin-top: 10px;
+            cursor: pointer;
+            white-space: nowrap; /* Prevents text from breaking */
+        }
+
+        /* Image Section - Improved Alignment */
+        .image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Ensures image aligns with content */
+            max-width: 100%; /* Keeps image aligned with content */
+        }
+
+        .image-section img {
+            width: 800px; /* Increased size */
+            max-width: 100%; /* Ensures responsiveness */
+            height: auto; /* Maintains aspect ratio */
+            margin-right: 60px; /* Added right margin */
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .seller-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .content,.image-section {
+                max-width: 100%;
+            }
+
+            .image-section img {
+                width: 100%;
+                margin-top: 20px auto;
+            }
+        }
+
+        .pricing-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        .content {
+            width: 50%;
+            padding-right: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .notice {
+            margin: 20px 0;
+            background-color: #ffe4ec;
+            padding: 10px 15px;
+            border-radius: 6px;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .notice .badge {
+            background-color: #e91e63;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .notice a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+
+        .notice a:hover {
+            text-decoration: underline;
+        }
+
+        .mobile-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .mobile-input input {
+            width: 70%;
+            padding: 10px;
+            border: 2px solid #e91e63;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .mobile-input button {
+            background-color: #e91e63;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .mobile-input button:hover {
+            background-color: #c2185b;
+        }
+
+        .image-section {
+            width: 40%;
+        }
+
+        .image-section img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Statistics Section Styles */
+        .statistics-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 0px;
+            background-color: #fafafa;
+            padding: 30px 20px;
+            flex-wrap: nowwrap;
+        }
+
+        .stat-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            flex: 1; /* Equal size for all boxes */
+            width: 23%; /* Ensures four cards in one row */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 5px; /* Slight margin to create balance */
+        }
+
+        .stat-card h2 {
+            color: #ff00a6;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: #000;
+            font-weight: 500;
+        }
+
+
+        .benefits-section {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .benefits-section h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .benefits-section p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .benefit-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .benefit-card img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .benefit-card h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .supplier-rewards-section {
+            background-color: #f3f7fe;
+            padding: 50px 20px;
+            text-align: left;
+        }
+
+        .supplier-rewards-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+        }
+
+        .reward-cards {
+            display: flex;
+            gap: 20px;
+        }
+
+        .reward-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 30%;
+            text-align: left;
+        }
+
+        .reward-card .icon img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .reward-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .reward-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .testimonial-section {
+            background-color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .testimonial-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 22%;
+            text-align: left;
+            position: relative;
+        }
+
+        .testimonial-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .play-icon {
+            position: absolute;
+            bottom: 100px;
+            left: 15px;
+            background-color: #ff007f;
+            color: #fff;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+
+        .testimonial-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            margin-top: 15px;
+        }
+
+        .testimonial-card p {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .how-it-works {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+        }
+
+        .steps-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .step {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 22%;
+            text-align: left;
+        }
+
+        .step-number {
+            background-color: #ff007f;
+            color: #fff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            margin-top: 10px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .learning-hub {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1 {
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .meesho {
+            color: #ff007f;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .visit-button a {
+            text-decoration: none;
+        }
+
+        .button-content {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ff007f;
+            border-radius: 25px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .play-icon {
+            background-color: #ff007f;
+            color: #fff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .button-content span {
+            color: #ff007f;
+            font-weight: 600;
+        }
+
+        .business-section {
+            background-color: #f9f9f9;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .business-section h2 {
+            font-size: 28px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            width: 45%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .feature-card p {
+            color: #555;
+        }
+
+        .highlight {
+            color: #ff007f;
+            font-weight: bold;
+        }
+
+        .shoe-categories {
+            background-color: #f9f9f9;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .shoe-categories h2 {
+            font-size: 28px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .category-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            color: #333;
+        }
+
+        .category-list p {
+            margin: 5px 0;
+        }
+
+        .view-less {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            cursor: pointer;
+        }
+
+        .support-section {
+            background-color: #f9f9f9;
+            padding: 40px;
+            border-radius: 15px;
+            display: flex;
+            align-items: flex-start;  /* Aligns content at the top */
+            gap: 30px;                /* Adds spacing between h2 and paragraph */
+        }
+
+        .text-content {
+            max-width: 600px;
+        }
+
+        .support-section h2 {
+            font-size: 28px;
+            color: #000;
+            margin-bottom: 0; /* Removes extra space below h2 */
+        }
+
+        .support-section p {
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .email-icon {
+            background-color: #ff66b2;
+            padding: 10px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .contact a {
+            color: #ff66b2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            border-top: 2px solid #ddd;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .logo {
+            font-size: 28px;
+            color: #d9534f;  /* Terracotta shade */
+            font-weight: bold;
+        }
+
+        .start-selling {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer-section h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 5px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .footer-section p {
+            color: #333;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .statistics-section {
+                    flex-wrap: wrap; /* Cards wrap in smaller screens */
+                }
+            .stat-card {
+                width: 45%; /* Two cards in one row */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .stat-card {
+                width: 100%; /* Single column layout */
+            }
+        }
+
+            </style>
+            <script>
+                function toggleMenu() {
+                    const navLinks = document.querySelector('.nav-links');
+                    navLinks.classList.toggle('show');
+                }
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">ShoeSure</div>
+        <div class="nav-links">
+            <a href="#">Sell Online</a>
+            <a href="How it work.html">How it works</a>
+            <a href="Pricing and Commission.html">Pricing & Commission</a>
+            <a href="Shipping and return.html">Shipping & Returns</a>
+            <a href="#">Grow Business</a>
+            <a href="#">Don’t have GST?</a>
+        </div>
+        <div class="buttons">
+            <a href="/login/seller login.html">
+                <button class="login-btn">Login</button>
+            </a>
+            <button class="start-btn">Start Selling</button>
+            <a href="/index.html">
+                <button class="back-btn">Back to Home</button>
+            </a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- Seller Section -->
+    <section class="pricing-section">
+        <div class="content">
+            <h1>Sell online to thousands of customers at shoesure</h1>
+            <p>Become a ShoeSure seller and expand your business globally.</p>
+
+            <div class="notice">
+                <span class="badge">New!</span> Don't have a GSTIN or a Composition GSTIN? 
+                You can still sell on ShoeSure. Click <a href="#">here</a> to know more.
+            </div>
+
+            <div class="mobile-input">
+                <input type="text" placeholder="+91 Enter Your Mobile Number">
+                <button>Start Selling</button>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <img src="/image/Commission image.png" alt="ShoeSure 0% Commission">
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+<div class="statistics-section">
+    <div class="stat-card">
+        <h2>11 Lakh+</h2>
+        <p>Trust ShoeSure to sell online</p>
+    </div>
+    <div class="stat-card">
+        <h2>14 Crore+</h2>
+        <p>Customers buying across India</p>
+    </div>
+    <div class="stat-card">
+        <h2>19000+</h2>
+        <p>Pincode Supported for delivery</p>
+    </div>
+    <div class="stat-card">
+        <h2>700+</h2>
+        <p>Categories to sell online</p>
+    </div>
+</div>
+
+<div class="benefits-section">
+    <h2>Why Sellers Love ShoeSure</h2>
+    <p>
+        All the benefits that come with selling on ShoeSure are designed 
+        to help cobblers connect with customers easily and expand their business globally.
+    </p>
+
+    <div class="benefits-container">
+        <div class="benefit-card">
+            <img src="image/Commission icon.png" alt="Icon">
+            <h3>Zero Commission Fees</h3>
+            <p>
+                Cobblers keep 100% of their profit with no hidden charges or commission fees.
+            </p>
+        </div>
+
+        <div class="benefit-card">
+            <img src="image/penalty icon.png" alt="Icon">
+            <h3>No Penalty Charges</h3>
+            <p>
+                No charges for delayed dispatch or cancellations to support small sellers.
+            </p>
+        </div>
+
+        <div class="benefit-card">
+            <img src="image/customization order.png" alt="Icon">
+            <h3>Customized Orders</h3>
+            <p>
+                Accept personalized shoe customization requests directly from customers.
+            </p>
+        </div>
+
+        <div class="benefit-card">
+            <img src="image/ease of bussiness icon.png" alt="Icon">
+            <h3>Easy Business Management</h3>
+            <p>
+                Manage orders, chat with customers, and track earnings from one platform.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="supplier-rewards-section">
+    <h2>Exclusive Sellers+ Rewards for the first 30 days</h2>
+
+    <div class="reward-cards">
+        <div class="reward-card">
+            <div class="icon">
+                <img src="image/annoncement.png" alt="Catalog Icon">
+            </div>
+            <h3>Free catalog visibility of ₹600</h3>
+            <p>
+                Run advertisements for your catalogs to increase the visibility of your products and get more orders. 
+                Currently, not available for sellers who don't have a Regular GSTIN.
+            </p>
+        </div>
+
+        <div class="reward-card">
+            <div class="icon">
+                <img src="image/cancellation.png" alt="Cancellation Icon">
+            </div>
+            <h3>No Order Cancellation Charges</h3>
+            <p>
+                Cancel orders that you can’t fulfill for unforeseen reasons without worrying about penalties.
+            </p>
+        </div>
+
+        <!-- New Reward Card -->
+        <div class="reward-card">
+            <div class="icon">
+                <img src="image/gift.png" alt="Fast Payment Icon">
+            </div>
+            <h3>Faster Payment Processing</h3>
+            <p>
+                Receive payments within 3 days after successful delivery to keep your cash flow smooth and stable.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="testimonial-section">
+    <h2>Experiences Sellers love to talk about</h2>
+
+    <div class="testimonial-cards">
+        <div class="testimonial-card">
+            <a href="https://youtu.be/Dx7uwcaDd60?si=LK1x2W4NLHD0PIc2" target="_blank">
+                <img src="image/Amit and Rajat.png" alt="Amit and Rajat">
+            </a>
+
+            <h3>Amit and Rajat Jain</h3>
+            <p>Smartees, Tiruppur</p>
+            <p>
+                Our business has grown beyond our imagination, getting up to 10,000 orders consistently during sale days. 
+                We are now constantly bringing new products thanks to insights.
+            </p>
+        </div>
+
+        <div class="testimonial-card">
+            <a href="https://youtu.be/UwZJ31Zv1cQ?si=qYcWcnGsRCxBqQ9e" target="_blank">
+                <img src="image/suman.png" alt="Suman">
+            </a>
+            <h3>Suman</h3>
+            <p>Keshav Fashion, Hisar</p>
+            <p>
+                I started selling with 4-5 orders on the very first day. 
+                In no time I was getting over 1000 orders a day, like a dream come true.
+            </p>
+        </div>
+
+        <div class="testimonial-card">
+            <a href="https://youtu.be/b6sHjCEmdC4?si=-xu4Yyk3CmFHjsP8" target="_blank">
+                <img src="image/Mohit Rathi.png" alt="Mohit Rathi">
+            </a>
+            <h3>Mohit Rathi</h3>
+            <p>Meira Jewellery, Ahmedabad</p>
+            <p>
+                It was extremely simple to transition to online business during lockdown. 
+                Suddenly we were all over India, seeing up to 5X growth on sale days.
+            </p>
+        </div>
+
+        <!-- New Testimonial Card -->
+        <div class="testimonial-card">
+            <a href="https://youtu.be/b6sHjCEmdC4?si=-xu4Yyk3CmFHjsP8" target="_blank">
+                <img src="image/Mohit Rathi.png" alt="Mohit Rathi">
+            </a>
+            
+            <h3>Ravi Sharma</h3>
+            <p>Footwear Craftsman, Jaipur</p>
+            <p>
+                Transitioning my handmade leather shoes online was the best decision. 
+                Orders skyrocketed, and my craft reached buyers across the country.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="how-it-works">
+    <h2>How it works</h2>
+
+    <div class="steps-container">
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Create Account</h3>
+            <p>
+                All you need is:
+                <ul>
+                    <li>GSTIN (for GST sellers) or Enrolment ID/UIN (for non-GST sellers)</li>
+                    <li>Bank Account</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>List Products</h3>
+            <p>List the products you want to sell in your supplier panel.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Get Orders</h3>
+            <p>Start getting orders from crores of Indians actively shopping on our platform.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>Lowest Cost Shipping</h3>
+            <p>Products are shipped to customers at the lowest costs.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">5</div>
+            <h3>Receive Payments</h3>
+            <p>Payments are deposited directly to your bank account following a 7-day payment cycle from order delivery.</p>
+        </div>
+
+        <!-- New Step -->
+        <div class="step">
+            <div class="step-number">6</div>
+            <h3>Customer Support</h3>
+            <p>24/7 dedicated customer support to help resolve any issues or queries you may have.</p>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="learning-hub">
+    <div class="content">
+        <h1><span class="ShoeSure">ShoeSure</span> | Supplier <b>LearningHub</b></h1>
+        <p>Learn how to sell and grow your business on ShoeSure</p>
+    </div>
+
+    <div class="visit-button">
+        <a href="" target="_blank">
+            <div class="button-content">
+                <div class="play-icon">▶</div>
+                <span>Visit Learning Hub</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="business-section">
+    <h2>Grow Your Business With ShoeSure</h2>
+
+    <div class="features">
+        <div class="feature-card">
+            <img src="image/lowest Shipping cost.png" alt="Lowest Shipping Costs">
+            <h3>Lowest Shipping Costs</h3>
+            <p>Sell your products across India to over 28,000+ pincodes at the lowest delivery cost.</p>
+        </div>
+
+        <div class="feature-card">
+            <img src="image/Ads icon.png" alt="Ads to grow more">
+            <h3>Ads to grow more</h3>
+            <p>Use selling tools like <span class="highlight">ShoeSure Ads</span> to be more visible and sell more products.</p>
+        </div>
+
+        <div class="feature-card">
+            <img src="image/Next day.png" alt="Next Day Dispatch">
+            <h3>Next Day Dispatch Program</h3>
+            <p>Sign up for the quick Next Day Dispatch (NDD) Program and get higher visibility and your own Account Manager.</p>
+        </div>
+
+        <div class="feature-card">
+            <img src="image/Insights.png" alt="Business Insights">
+            <h3>Business Insights</h3>
+            <p>Use product & price recommendations so that you’re always on top of your business.</p>
+        </div>
+    </div>
+</div>
+
+<div class="shoe-categories">
+    <h2>Popular Shoe Categories to Sell Online</h2>
+
+    <div class="category-list">
+        <p>Sell Sneakers Online</p>
+        <p>Sell Formal Shoes Online</p>
+        <p>Sell Loafers Online</p>
+        <p>Sell Sandals Online</p>
+        <p>Sell Running Shoes Online</p>
+        <p>Sell Casual Shoes Online</p>
+        <p>Sell Boots Online</p>
+        <p>Sell Flip-Flops Online</p>
+        <p>Sell Leather Shoes Online</p>
+        <p>Sell Kids' Shoes Online</p>
+        <p>Sell Party Wear Shoes Online</p>
+        <p>Sell Sports Shoes Online</p>
+        <p>Sell Handmade Shoes Online</p>
+        <p>Sell Wedding Shoes Online</p>
+        <p>Sell Trekking Shoes Online</p>
+        <p>Sell Heels Online</p>
+        <p>Sell Slippers Online</p>
+        <p>Sell Moccasins Online</p>
+        <p>Sell Canvas Shoes Online</p>
+        <p>Sell Custom Designed Shoes Online</p>
+    </div>
+</div>
+
+
+<div class="support-section">
+    <div class="text-content">
+        <h2>ShoeSure Supplier Support Available 24/7</h2>
+        <p>
+            ShoeSure supplier support is available to solve all your doubts and issues 
+            before and after you start your online selling business.
+        </p>
+        <div class="contact">
+            <img src="image/email icon.png" alt="Email Icon" class="email-icon">
+            <p>You can reach out to <a href="mailto:support@shoesure.com">support@shoesure.com</a></p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h2 class="logo">ShoeSure</h2>
+            <p>Connect cobblers and shoe artisans directly with customers for authentic, handcrafted footwear at pocket-friendly prices.</p>
+            <button class="start-selling">Start Selling</button>
+        </div>
+
+        <div class="footer-section">
+            <h3>Sell on ShoeSure</h3>
+            <ul>
+                <li>Sell Online</li>
+                <li>Pricing & Commission</li>
+                <li>How it works</li>
+                <li>Shipping & Returns</li>
+                <li>Grow Your Business</li>
+                <li>Learning Hub</li>
+                <li>ShoeSure Ads</li>
+                <li>Shop Online on ShoeSure</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>support@shoesure.com</p>
+            <div class="social-icons">
+                <img src="image/instagram icon.png" alt="Instagram">
+                <img src="image/facebook.png" alt="Facebook">
+                <img src="image/youtube.png" alt="YouTube">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 ShoeSure Inc. All Rights Reserved.
+    </div>
+</footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+     body { 
+            font-family: Arial, sans-serif; 
+        }
+        .chat-button { 
+            position: fixed; 
+            bottom: 20px; right: 20px; 
+            background: #007bff; 
+            color: white; 
+            padding: 10px 15px; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+        .chat-box { 
+            position: fixed; 
+            bottom: 80px; right: 20px; 
+            width: 300px; background: white; 
+            border-radius: 10px; 
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+            display: none; overflow: hidden; 
+        }
+        .chat-header { 
+            background: #007bff; 
+            color: white; 
+            padding: 10px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .chat-messages { 
+            height: 250px;
+            padding: 10px; 
+            overflow-y: auto; 
+            background: #f6f4f4; 
+        }
+        .chat-input { 
+            display: flex; 
+            padding: 10px; 
+            background: rgb(246, 240, 240); 
+        }
+        .chat-input input { 
+            flex: 1; 
+            padding: 8px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+        }
+        .chat-input button { 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            padding: 8px 10px; 
+            margin-left: 5px; 
+            cursor: pointer; 
+        }
+        .bot-message, .user-message { 
+            padding: 8px; 
+            border-radius: 5px; 
+            margin-bottom: 5px; 
+            width: fit-content; 
+        }
+        .bot-message { 
+            background: #eee; 
+        }
+        .user-message { 
+            background: #007bff; 
+            color: white; 
+            margin-left: auto; 
+        }
+        .chat-option { 
+            display: block; 
+            margin: 5px 0; 
+            padding: 8px; 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            width: 100%; 
+            border-radius: 5px; 
+        }
+        .rules-container {
+            position: fixed;
+            bottom: 60px;
+            right: 340px; /* Adjust this to position it correctly */
+            width: 280px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 12px;
+            color: #555;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .rules-container h4 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .rules-container ul {
+            padding-left: 15px;
+        }
+</style>
+<body>
+    <div class="chat-button" onclick="toggleChat()">
+        💬 Live Chat
+    </div>
+
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <span>💁‍♀️ Live Chat</span>
+            <button onclick="toggleChat()">✖</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input" id="chatInputContainer">
+            <input type="text" id="chatInput" placeholder="Type a message..." disabled>
+            <button onclick="sendMessage()" disabled>Send</button>
+        </div>
+    </div>
+    <div class="rules-container">
+        <h4>Company Rules & Regulations regarding chatbox</h4>
+        <ul>
+            <li>Respect all users and agents.</li>
+            <li>No spam or promotional messages.</li>
+            <li>Maintain polite and professional communication.</li>
+            <li>Violating rules may result in chat restrictions.</li>
+            <li>Provide only valid information</li>
+        </ul>
+    </div>
+
+    <script>
+        let chatStep = 0;
+        let userResponses = {};
+
+        function toggleChat() {
+            let chatBox = document.getElementById("chatBox");
+            chatBox.style.display = chatBox.style.display === "block" ? "none" : "block";
+            if (chatBox.style.display === "block") startChat();
+        }
+
+        function startChat() {
+            let chatMessages = document.getElementById("chatMessages");
+            chatMessages.innerHTML = "";
+            chatStep = 0;
+            userResponses = {};
+            displayBotMessage("What are you here for?", ["New Order", "Placed Order", "Track Order", "Report an Issue"]);
+        }
+
+        function displayBotMessage(message, options = []) {
+            let chatMessages = document.getElementById("chatMessages");
+            let botMessage = document.createElement("p");
+            botMessage.textContent = message;
+            botMessage.classList.add("bot-message");
+            chatMessages.appendChild(botMessage);
+            
+            if (options.length > 0) {
+                options.forEach(option => {
+                    let optionBtn = document.createElement("button");
+                    optionBtn.textContent = option;
+                    optionBtn.classList.add("chat-option");
+                    optionBtn.onclick = () => handleUserResponse(option);
+                    chatMessages.appendChild(optionBtn);
+                });
+            } else {
+                enableTextInput();
+            }
+        }
+
+        function enableTextInput() {
+            document.getElementById("chatInput").disabled = false;
+            document.querySelector(".chat-input button").disabled = false;
+        }
+
+        function handleUserResponse(response) {
+            userResponses[chatStep] = response;
+            displayUserMessage(response);
+            chatStep++;
+            
+            if (chatStep === 1) {
+                if (response === "New Order" || response === "Placed Order") {
+                    displayBotMessage("What is your order type?", ["Renovation", "Customization", "Buying New Product"]);
+                } else if (response === "Track Order") {
+                    displayBotMessage("Please enter your Order Number to track your order:");
+                } else {
+                    displayBotMessage("Please provide more details about your issue.");
+                }
+            } else if (chatStep === 2) {
+                displayBotMessage("Please enter your Order Number:");
+            } else if (chatStep === 3) {
+                displayBotMessage("Please enter your Registered Mobile Number:");
+            
+            } else {
+                displayBotMessage("Relax, your request will be handled on time. Our customer care will contact you soon!");
+            }
+        }
+
+        function displayUserMessage(message) {
+            let chatMessages = document.getElementById("chatMessages");
+            let userMessage = document.createElement("p");
+            userMessage.textContent = message;
+            userMessage.classList.add("user-message");
+            chatMessages.appendChild(userMessage);
+        }
+
+        function sendMessage() {
+            let inputField = document.getElementById("chatInput");
+            let message = inputField.value.trim();
+            if (message === "") return;
+            handleUserResponse(message);
+            inputField.value = "";
+        }
+    </script>
+</body>
+</html>

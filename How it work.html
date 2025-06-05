@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How it wroks</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+
+/* Navbar Styles */
+.navbar { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 40px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.logo { color: #ff0080; 
+    font-weight: bold; 
+    font-size: 24px; 
+    cursor: pointer; 
+}
+.nav-links { 
+    display: flex; 
+    gap: 20px; 
+}
+.nav-links a { 
+    text-decoration: none; 
+    color: black; 
+    font-weight: 500; 
+}
+.buttons { 
+    display: flex; 
+    gap: 10px; 
+}
+.login-btn { 
+    border: 1px solid #ff0080; 
+    color: #ff0080; 
+    background: none; 
+    padding: 8px 20px; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-weight: bold; 
+}
+.start-btn { 
+    background-color: #ff0080; 
+    color: white; border: none; 
+    padding: 8px 20px; border-radius: 5px; 
+    cursor: pointer; 
+}
+.login-btn:hover { 
+    background-color: #fff0f5; 
+}
+.start-btn:hover { 
+    background-color: #e60073; 
+}
+
+.hamburger { display: none; 
+    flex-direction: column; 
+    gap: 5px; cursor: pointer; 
+}
+.hamburger div { 
+    width: 25px; 
+    height: 3px; 
+    background-color: #ff0080; 
+}
+
+@media (max-width: 768px) {
+    .nav-links { 
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 60px; 
+        right: 20px; 
+        background-color: white; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        width: 200px; 
+        padding: 10px 0; 
+    }
+
+    .nav-links.show { display: flex; }
+    .hamburger { display: flex; }
+}
+
+/* Seller Section Styles */
+.seller-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff5f8;
+            padding: 40px ;
+            flex-wrap: wrap;
+        }
+
+        .content {
+            max-width: 50%;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #000;
+        }
+
+        .highlight {
+            color: #ff00a6;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .highlight-box {
+            background: #fff;
+            border: 2px solid #ff00a6;
+            padding: 10px 15px;
+            display: inline-block;
+            border-radius: 20px;
+            margin-top: 15px;
+        }
+
+        .new-tag {
+            color: #ff00a6;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .input-box {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between input and button */
+            margin-top: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .input-box span {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .input-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+
+        .start-btn-seller {
+            background-color: #ff00a6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 30px;
+            width: auto;
+            margin-top: 10px;
+            cursor: pointer;
+            white-space: nowrap; /* Prevents text from breaking */
+        }
+
+        /* Image Section - Improved Alignment */
+        .image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Ensures image aligns with content */
+            max-width: 100%; /* Keeps image aligned with content */
+        }
+
+        .image-section img {
+            width: 800px; /* Increased size */
+            max-width: 100%; /* Ensures responsiveness */
+            height: auto; /* Maintains aspect ratio */
+            margin-right: 60px; /* Added right margin */
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .seller-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .content,.image-section {
+                max-width: 100%;
+            }
+
+            .image-section img {
+                width: 100%;
+                margin-top: 20px auto;
+            }
+        }
+
+        .pricing-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        .content {
+            width: 50%;
+            padding-right: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .notice {
+            margin: 20px 0;
+            background-color: #ffe4ec;
+            padding: 10px 15px;
+            border-radius: 6px;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .notice .badge {
+            background-color: #e91e63;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .notice a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+
+        .notice a:hover {
+            text-decoration: underline;
+        }
+
+        .mobile-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .mobile-input input {
+            width: 70%;
+            padding: 10px;
+            border: 2px solid #e91e63;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .mobile-input button {
+            background-color: #e91e63;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .mobile-input button:hover {
+            background-color: #c2185b;
+        }
+
+        .image-section {
+            width: 40%;
+        }
+
+        .image-section img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .how-it-works {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+        }
+
+        .steps-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .step {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 22%;
+            text-align: left;
+        }
+
+        .step-number {
+            background-color: #ff007f;
+            color: #fff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            margin-top: 10px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Supplier section */
+
+        .return-section {
+            display: flex;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+            align-items: center;
+        }
+
+        .return-info {
+            width: 60%;
+            padding-left: 40px;
+        }
+
+        .return-info h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .return-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .bullet {
+            color: #e91e63;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .return-image img {
+            width: 300px; /* Image size matches the shipping section */
+            border-radius: 12px;
+        }
+
+
+        .video-container {
+            margin: 20px 0;
+            border: 4px solid #e91e63;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .steps {
+            background-color: #fce4ec;
+            border-left: 6px solid #e91e63;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .steps h3 {
+            color: #e91e63;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .steps ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .steps li {
+            color: #333;
+            margin: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .steps li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #e91e63;
+            font-weight: bold;
+        }
+        /* Video Link Styling */
+        .video-link {
+            margin-top: 20px;
+        }
+
+        .video-btn {
+            display: inline-block;
+            background-color: #e91e63;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .video-btn:hover {
+            background-color: #d81b60;
+        }
+
+        /*Support section  */
+
+        .support-section {
+            background-color: #f9f9f9;
+            padding: 40px;
+            border-radius: 15px;
+            display: flex;
+            align-items: flex-start;  /* Aligns content at the top */
+            gap: 30px;                /* Adds spacing between h2 and paragraph */
+        }
+
+        .text-content {
+            max-width: 600px;
+        }
+
+        .support-section h2 {
+            font-size: 28px;
+            color: #000;
+            margin-bottom: 0; /* Removes extra space below h2 */
+        }
+
+        .support-section p {
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .email-icon {
+            background-color: #ff66b2;
+            padding: 10px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .contact a {
+            color: #ff66b2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .footer-left,
+        .footer-middle,
+        .footer-right {
+            width: 30%;
+        }
+
+        .brand-name {
+            color: #e91e63;
+            font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .start-btn {
+            background-color: #e91e63;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .start-btn:hover {
+            background-color: #d81b60;
+        }
+
+        .footer-middle h3,
+        .footer-right h3 {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-middle ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-middle li {
+            margin-bottom: 5px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .footer-middle .highlight {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .footer-right .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .footer-right .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #ffc0cb;
+            color: #e91e63;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #888;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 20px;
+        }
+    
+</style>
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+</script>
+</head>
+<body>
+    <!-- Navbar -->
+<div class="navbar">
+    <div class="logo">ShoeSure</div>
+    <div class="nav-links">
+        <a href="#">Sell Online</a>
+        <a href="How it work.html">How it works</a>
+        <a href="Pricing and Commission.html">Pricing & Commission</a>
+        <a href="Shipping and return.html">Shipping & Returns</a>
+        <a href="#">Grow Business</a>
+        <a href="#">Don’t have GST?</a>
+    </div>
+    <div class="buttons">
+        <a href="login/seller login.html">
+            <button class="login-btn">Login</button>
+        </a>
+        <button class="start-btn">Start Selling</button>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<section class="pricing-section">
+    <div class="content">
+        <h1>How to Sell on shoesure</h1>
+        <p class="seller-text">
+            Become a <span class="highlight">ShoeSure seller</span> and join 
+            <span class="highlight">11 lakh+</span> sellers who are growing their business every day.
+        </p>
+        <div class="notice">
+            <span class="badge">New!</span> Don't have a GSTIN or a Composition GSTIN? 
+            You can still sell on ShoeSure. Click <a href="#">here</a> to know more.
+        </div>
+
+        <div class="mobile-input">
+            <input type="text" placeholder="+91 Enter Your Mobile Number">
+            <button>Start Selling</button>
+        </div>
+    </div>
+
+    <div class="image-section">
+        <img src="image/How to sell.png" alt="ShoeSure 0% Commission">
+    </div>
+</section>
+
+<div class="how-it-works">
+    <h2>Become a seller on ShoeSure in simple steps</h2>
+
+    <div class="steps-container">
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Sign up for free</h3>
+            <p>
+                Register as a ShoeSure Seller. All you need is an active bank account and your GSTIN number (for GST sellers) or Enrolment ID / UIN (for non-GST sellers).
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Upload your product & catalog</h3>
+            <p>After completing the registration, upload your product catalog on the Meesho Supplier Panel.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Receive & Ship Orders</h3>
+            <p>Meesho charges the lowest shipping cost for deliveries across India (for GST sellers) and within the state (for non-GST sellers).</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>Receive Payments</h3>
+            <p>Payment is securely deposited directly to your bank account on Meesho following a 7-day payment cycle from order delivery, including Cash on Delivery orders.</p>
+        </div>
+        </div>
+
+
+    <div class="return-section">
+        <div class="return-image">
+            <img src="image/How to sell.png" alt="How to Sell">
+        </div>
+        <div class="return-info">
+            <h3><b>What is the shoeSure Supplier Panel?</b></h3>
+            <p>
+                SheoSure Supplier Panel is the one-stop solution for all your online selling needs. <br>From listing your products and managing inventory to processing orders and tracking payments, log in to the Supplier panel and manage your online business with ease. The process is simple, and to know more you can watch the below video.
+                We recommend you review the legal and policies section in the Supplier Panel to ensure your uploaded catalogues are in compliance with the policies of Meesho.
+
+                You will need to upload your catalog to start selling on Meesho. You will be able to upload your product catalog by logging on to the Meesho Supplier Panel.
+
+            </p>
+            <!-- Step section -->
+            <div class="steps">
+                <h3>Steps</h3>
+                <ul>
+                    <li>Register on Meesho Supplier Panel</li>
+                    <li>Upload your product catalog</li>
+                    <li>Start selling and grow your business</li>
+                </ul>
+            </div>
+            <!-- Video link section -->
+            <div class="video-link">
+                <a href="https://www.youtube.com/watch?v=n-EXHucB7H8" 
+                   target="_blank" 
+                   class="video-btn">
+                   📹 Watch Video Guide
+                </a>
+            </div>
+        </div>
+    </div>
+       
+    <div class="support-section">
+        <div class="text-content">
+            <h2>ShoeSure Supplier Support Available 24/7</h2>
+            <p>
+                ShoeSure supplier support is available to solve all your doubts and issues 
+                before and after you start your online selling business.
+            </p>
+            <div class="contact">
+                <img src="image/email icon.png" alt="Email Icon" class="email-icon">
+                <p>You can reach out to <a href="mailto:support@shoesure.com">support@shoesure.com</a></p>
+            </div>
+        </div>
+    </div>          
+       
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2 class="brand-name">ShoeSure</h2>
+                <p>Sell your products to crores of customers on ShoeSure at 0% commission</p>
+                <button class="start-btn">Start Selling</button>
+            </div>
+
+            <div class="footer-middle">
+                <h3>Sell on ShoeSure</h3>
+                <ul>
+                    <li>Sell Online</li>
+                    <li>Pricing & Commission</li>
+                    <li>How it works</li>
+                    <li>Shipping & Returns</li>
+                    <li>Grow Your Business</li>
+                    <li class="highlight">Learning Hub</li>
+                    <li>ShoeSure Ads</li>
+                    <li>Shop Online on ShoeSure</li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h3>Contact Us</h3>
+                <p>sell@shoesure.com</p>
+                <div class="social-icons">
+                    <a href="image/instagram icon.png" class="icon"><i class="fab fa-instagram"></i></a>
+                    <a href="image/facebook.png" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 ShoeSure Inc. All Rights Reserved.
+        </div>
+    </footer>
+        
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
