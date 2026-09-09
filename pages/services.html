@@ -7,11 +7,11 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Sticky Glass Navbar -->
     <nav class="navbar">
         <div class="logo" onclick="window.location.href='../index.html'">
             <i class="fa-solid fa-shoe-prints"></i> ShoeSure
@@ -23,12 +23,14 @@
             <a href="how-it-works.html">How It Works</a>
             <a href="pricing-commission.html">Pricing & Commission</a>
             <a href="seller.html">Become a Seller</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Contact Support</a>
         </div>
 
-        <div class="buttons">
+        <div class="nav-actions">
             <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
-            <button class="btn btn-primary" onclick="window.location.href='register.html'">Register</button>
+            <button class="btn btn-primary" onclick="window.location.href='order.html'">
+                <i class="fa-solid fa-cart-shopping"></i> Book Service
+            </button>
         </div>
 
         <div class="hamburger">
@@ -38,71 +40,57 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="seller-hero">
-        <h1>Shoe Renovation, Customization & Marketplace Services</h1>
-        <p>Explore specialized footwear repair, custom design painting, sole replacement, and artisan services.</p>
-    </section>
+    <!-- Services Header -->
+    <header class="hero" style="padding: 60px 5% 80px;">
+        <div class="hero-content" style="max-width: 700px;">
+            <div class="pill-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Artisan Catalog</div>
+            <h1 class="hero-title">Shoe Repair, Renovation & <span>Custom Art</span></h1>
+            <p class="hero-subtitle">Book professional doorstep shoe repair, custom painting, sole replacement, and leather restoration.</p>
+        </div>
+    </header>
 
-    <!-- Services Catalog Grid -->
-    <section class="services">
-        <div class="service-container" style="max-width: 1200px; margin: 0 auto;">
-            <div class="service-card">
-                <i class="fa-solid fa-screwdriver-wrench fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-                <h3>Complete Shoe Renovation</h3>
-                <p>Restore worn-out sneakers, heels, boots, and leather shoes back to pristine condition.</p>
-                <button class="btn btn-primary" style="margin-top: 15px;" onclick="window.location.href='order.html'">Book Renovation</button>
+    <!-- Services Grid -->
+    <section class="section" style="padding-top: 0;">
+        <div class="cards-grid">
+            <div class="service-card-modern">
+                <div class="card-img-container">
+                    <img src="../assets/images/shoe-renovation.png" alt="Complete Shoe Renovation">
+                </div>
+                <div class="card-body">
+                    <h3>Shoe Renovation & Repair</h3>
+                    <p>Complete stitching, heel replacement, sole repair, and upper leather restoration for oxfords, boots, and luxury footwear.</p>
+                    <a href="order.html" class="btn btn-primary" style="width: 100%; margin-top: auto;">Book Renovation</a>
+                </div>
             </div>
 
-            <div class="service-card">
-                <i class="fa-solid fa-palette fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-                <h3>Custom Shoe Painting & Art</h3>
-                <p>Get custom graphics, logos, colorways, and initials painted on your shoes by talented artists.</p>
-                <button class="btn btn-primary" style="margin-top: 15px;" onclick="window.location.href='order.html'">Request Customization</button>
+            <div class="service-card-modern">
+                <div class="card-img-container">
+                    <img src="../assets/images/custom-design.png" alt="Custom Sneaker Painting">
+                </div>
+                <div class="card-body">
+                    <h3>Custom Sneaker Painting</h3>
+                    <p>Hand-painted acrylic sneaker designs, custom color blocking, initial engraving, and anime or street art themes.</p>
+                    <a href="order.html" class="btn btn-primary" style="width: 100%; margin-top: auto;">Request Custom Art</a>
+                </div>
             </div>
 
-            <div class="service-card">
-                <i class="fa-solid fa-shoe-prints fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-                <h3>Sole Replacement & Stitching</h3>
-                <p>Resole your favorite boots and oxfords with durable rubber or authentic leather soles.</p>
-                <button class="btn btn-primary" style="margin-top: 15px;" onclick="window.location.href='order.html'">Book Repair</button>
-            </div>
-
-            <div class="service-card">
-                <i class="fa-solid fa-sparkles fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-                <h3>Deep Cleaning & Polishing</h3>
-                <p>Professional stain removal, suede cleaning, deep wash, and premium wax polishing.</p>
-                <button class="btn btn-primary" style="margin-top: 15px;" onclick="window.location.href='order.html'">Book Cleaning</button>
+            <div class="service-card-modern">
+                <div class="card-img-container">
+                    <img src="../assets/images/shoesure-hero.png" alt="Deep Cleaning & Polish">
+                </div>
+                <div class="card-body">
+                    <h3>Deep Wash & Premium Polish</h3>
+                    <p>Antibacterial deep washing, suede stain extraction, re-dyeing, and high-shine carnauba wax polishing.</p>
+                    <a href="order.html" class="btn btn-primary" style="width: 100%; margin-top: auto;">Book Cleaning</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>ShoeSure</h4>
-                <p style="font-size: 14px;">The home for artisan shoe repair and customization services.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="order.html">Place Order</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="contact.html">Support Email</a></li>
-                    <li><a href="live-chat.html">Live Chat</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ShoeSure Inc. All Rights Reserved.</p>
+    <footer class="footer-modern">
+        <div class="footer-bottom" style="border: none; padding: 0;">
+            <p>&copy; 2026 ShoeSure Services Catalog. All Rights Reserved.</p>
         </div>
     </footer>
 

@@ -7,11 +7,11 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Sticky Glass Navbar -->
     <nav class="navbar">
         <div class="logo" onclick="window.location.href='../index.html'">
             <i class="fa-solid fa-shoe-prints"></i> ShoeSure
@@ -26,9 +26,11 @@
             <a href="contact.html">Contact Support</a>
         </div>
 
-        <div class="buttons">
+        <div class="nav-actions">
             <button class="btn btn-outline" onclick="window.location.href='login.html'">Seller Login</button>
-            <button class="btn btn-primary" onclick="window.location.href='register.html'">Start Selling</button>
+            <button class="btn btn-primary" onclick="window.location.href='register.html'">
+                <i class="fa-solid fa-rocket"></i> Register Store
+            </button>
         </div>
 
         <div class="hamburger">
@@ -38,123 +40,93 @@
         </div>
     </nav>
 
-    <!-- Seller Hero Section -->
-    <section class="seller-hero">
-        <h1>Sell Online to Thousands of Customers on ShoeSure</h1>
-        <p>Become a ShoeSure partner, expand your reach nationwide, and keep 100% of your earnings with 0% commission fees.</p>
-
-        <div style="background: #fff; max-width: 600px; margin: 30px auto; padding: 15px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
-            <span style="background: #e53e3e; color: white; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: bold; margin-right: 8px;">NEW!</span>
-            No GSTIN or Composition GSTIN? You can still register & sell on ShoeSure.
+    <!-- Seller Hero Header -->
+    <header class="hero" style="background: radial-gradient(circle at 50% 10%, rgba(255, 0, 122, 0.12) 0%, transparent 60%), #090d16; color: #ffffff;">
+        <div class="hero-content">
+            <div class="pill-badge" style="background: rgba(255, 255, 255, 0.1); color: var(--accent-cyan); border-color: rgba(0, 223, 216, 0.3);">
+                <i class="fa-solid fa-store"></i> Seller Onboarding
+            </div>
+            <h1 class="hero-title" style="color: #ffffff;">
+                Expand Your Business. <br><span style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent-cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">0% Commission Fees.</span>
+            </h1>
+            <p class="hero-subtitle" style="color: #94a3b8;">
+                Reach millions of shoe buyers across India. Keep 100% of your earnings with zero hidden listing charges.
+            </p>
+            
+            <div style="display: flex; gap: 12px; margin-top: 25px; max-width: 480px;">
+                <input type="text" class="form-control" placeholder="+91 Enter Your Mobile Number" style="background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2); color: white;">
+                <button class="btn btn-primary" onclick="window.location.href='register.html'">Start Selling</button>
+            </div>
         </div>
+        
+        <div class="hero-media">
+            <div class="hero-image-wrapper">
+                <img src="../assets/images/seller-store.png" alt="Luxury Footwear Store Showcase">
+            </div>
+        </div>
+    </header>
 
-        <div style="display: flex; gap: 10px; justify-content: center; max-width: 500px; margin: 0 auto;">
-            <input type="text" placeholder="+91 Enter Mobile Number" style="padding: 12px; flex: 1; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
-            <button class="btn btn-primary" onclick="window.location.href='register.html'">Start Selling</button>
+    <!-- Stats Banner -->
+    <section class="section" style="background: #ffffff;">
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-number">11 Lakh+</div>
+                <div class="stat-label">Sellers & Artisans</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">14 Crore+</div>
+                <div class="stat-label">Active Buyers</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">19,000+</div>
+                <div class="stat-label">Pincodes Covered</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">0%</div>
+                <div class="stat-label">Commission Rate</div>
+            </div>
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section style="background: #ffffff; padding: 50px 20px;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; text-align: center;">
-            <div style="padding: 20px; background: var(--light-bg); border-radius: var(--radius-md);">
-                <h2 style="color: var(--primary-color); font-size: 32px;">11 Lakh+</h2>
-                <p style="color: var(--text-muted);">Registered Sellers & Cobblers</p>
-            </div>
-            <div style="padding: 20px; background: var(--light-bg); border-radius: var(--radius-md);">
-                <h2 style="color: var(--primary-color); font-size: 32px;">14 Crore+</h2>
-                <p style="color: var(--text-muted);">Active Indian Shoppers</p>
-            </div>
-            <div style="padding: 20px; background: var(--light-bg); border-radius: var(--radius-md);">
-                <h2 style="color: var(--primary-color); font-size: 32px;">19,000+</h2>
-                <p style="color: var(--text-muted);">Delivery Pincodes Covered</p>
-            </div>
-            <div style="padding: 20px; background: var(--light-bg); border-radius: var(--radius-md);">
-                <h2 style="color: var(--primary-color); font-size: 32px;">0%</h2>
-                <p style="color: var(--text-muted);">Commission Rate</p>
-            </div>
+    <!-- Benefits Grid -->
+    <section class="section">
+        <div class="section-header">
+            <div class="pill-badge"><i class="fa-solid fa-shield-heart"></i> Vendor Advantages</div>
+            <h2 class="section-title">Why Artisans & Sellers Choose ShoeSure</h2>
+            <p class="section-subtitle">Designed specifically to support local cobblers, small shoe stores, and footwear artisans.</p>
         </div>
-    </section>
 
-    <!-- Benefits Section -->
-    <section style="padding: 60px 20px; background: var(--light-bg);">
-        <h2 style="text-align: center; margin-bottom: 40px;">Why Sellers & Artisans Love ShoeSure</h2>
-        <div class="seller-features-grid">
-            <div class="feature-box">
-                <i class="fa-solid fa-percent fa-2x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
+        <div class="cards-grid">
+            <div class="service-card-modern">
+                <div style="width: 50px; height: 50px; border-radius: var(--radius-sm); background: rgba(255, 0, 122, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px;">
+                    <i class="fa-solid fa-percent"></i>
+                </div>
                 <h3>Zero Commission Fees</h3>
-                <p style="font-size: 14px; color: var(--text-muted);">Keep 100% of your sale price. No hidden charges or listing fees.</p>
+                <p>Keep 100% of your sale amount without hidden commissions, listing costs, or tier deductions.</p>
             </div>
 
-            <div class="feature-box">
-                <i class="fa-solid fa-shield-halved fa-2x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-                <h3>No Penalty Charges</h3>
-                <p style="font-size: 14px; color: var(--text-muted);">Zero penalty on delayed dispatch or order cancellations for small vendors.</p>
+            <div class="service-card-modern">
+                <div style="width: 50px; height: 50px; border-radius: var(--radius-sm); background: rgba(121, 40, 202, 0.1); color: var(--accent-purple); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px;">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3>Fast Direct Payouts</h3>
+                <p>Settlement funds are securely deposited into your bank account within 3 to 7 days of delivery.</p>
             </div>
 
-            <div class="feature-box">
-                <i class="fa-solid fa-wand-magic-sparkles fa-2x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-                <h3>Customization Requests</h3>
-                <p style="font-size: 14px; color: var(--text-muted);">Receive direct custom requests and shoe repair jobs from local buyers.</p>
-            </div>
-
-            <div class="feature-box">
-                <i class="fa-solid fa-bolt fa-2x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-                <h3>Fast Payment Cycles</h3>
-                <p style="font-size: 14px; color: var(--text-muted);">Get paid directly into your bank account within 3 to 7 days of delivery.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How to Start Selling -->
-    <section style="padding: 60px 20px; max-width: 1000px; margin: 0 auto;">
-        <h2 style="text-align: center; margin-bottom: 30px;">How Selling Works</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-            <div style="background: white; padding: 20px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
-                <div style="font-size: 24px; font-weight: bold; color: var(--primary-color); margin-bottom: 10px;">1. Register</div>
-                <p style="font-size: 14px;">Sign up using mobile number, GSTIN or Enrollment ID, and bank details.</p>
-            </div>
-            <div style="background: white; padding: 20px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
-                <div style="font-size: 24px; font-weight: bold; color: var(--primary-color); margin-bottom: 10px;">2. Catalog</div>
-                <p style="font-size: 14px;">Upload photos and descriptions of your footwear products or repair services.</p>
-            </div>
-            <div style="background: white; padding: 20px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
-                <div style="font-size: 24px; font-weight: bold; color: var(--primary-color); margin-bottom: 10px;">3. Receive Orders</div>
-                <p style="font-size: 14px;">Get notifications when customers buy or request repair services.</p>
-            </div>
-            <div style="background: white; padding: 20px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
-                <div style="font-size: 24px; font-weight: bold; color: var(--primary-color); margin-bottom: 10px;">4. Deliver & Earn</div>
-                <p style="font-size: 14px;">Hand off package to courier partner and receive fast direct bank payouts.</p>
+            <div class="service-card-modern">
+                <div style="width: 50px; height: 50px; border-radius: var(--radius-sm); background: rgba(0, 112, 243, 0.1); color: var(--accent-blue); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px;">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                <h3>Direct Customer Chat</h3>
+                <p>Receive custom repair orders and discuss specific shoe specifications directly with buyers.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>ShoeSure Seller Portal</h4>
-                <p style="font-size: 14px;">Empowering shoe cobblers, artisans, and sellers across India.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Seller Links</h4>
-                <ul>
-                    <li><a href="seller.html">Become a Seller</a></li>
-                    <li><a href="pricing-commission.html">Pricing & Commission</a></li>
-                    <li><a href="how-it-works.html">How It Works</a></li>
-                    <li><a href="register.html">Seller Registration</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="contact.html">Support Email</a></li>
-                    <li><a href="live-chat.html">Seller Live Chat</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ShoeSure Inc. All Rights Reserved.</p>
+    <footer class="footer-modern">
+        <div class="footer-bottom" style="border: none; padding: 0;">
+            <p>&copy; 2026 ShoeSure Seller Portal. All Rights Reserved.</p>
         </div>
     </footer>
 
