@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - ShoeSure</title>
+    <title>Services & 3D Studio - ShoeSure</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
@@ -19,7 +21,7 @@
         
         <div class="nav-links">
             <a href="../index.html">Home</a>
-            <a href="services.html" class="active">Services</a>
+            <a href="services.html" class="active">Services & 3D Studio</a>
             <a href="how-it-works.html">How It Works</a>
             <a href="pricing-commission.html">Pricing & Commission</a>
             <a href="seller.html">Become a Seller</a>
@@ -41,16 +43,52 @@
     </nav>
 
     <!-- Services Header -->
-    <header class="hero" style="padding: 60px 5% 80px;">
+    <header class="hero" style="padding: 60px 5% 40px;">
         <div class="hero-content" style="max-width: 700px;">
-            <div class="pill-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Artisan Catalog</div>
-            <h1 class="hero-title">Shoe Repair, Renovation & <span>Custom Art</span></h1>
-            <p class="hero-subtitle">Book professional doorstep shoe repair, custom painting, sole replacement, and leather restoration.</p>
+            <div class="pill-badge"><i class="fa-solid fa-cube"></i> Interactive 3D Studio</div>
+            <h1 class="hero-title">Custom 3D Shoe & <span>Craftsmanship Studio</span></h1>
+            <p class="hero-subtitle">Interact with our 3D shoe model below. Switch between Sport Sneaker mesh, Classic Leather, and Custom Street Art materials in real-time.</p>
         </div>
     </header>
 
+    <!-- Three.js 3D Interactive Shoe Viewport Section -->
+    <section class="section" style="padding-top: 0; padding-bottom: 40px;">
+        <div class="three-shoe-section">
+            <div style="text-align: center; margin-bottom: 15px;">
+                <div class="pill-badge" style="background: rgba(255, 255, 255, 0.1); color: var(--accent-cyan); border-color: rgba(0, 223, 216, 0.3);">
+                    <i class="fa-solid fa-hand-pointer"></i> Move Cursor to Rotate in 3D
+                </div>
+            </div>
+
+            <!-- 3D Canvas Container -->
+            <div id="three-shoe-canvas-container" class="three-shoe-container"></div>
+
+            <!-- Material & Texture Switcher Controls -->
+            <div class="three-controls-bar">
+                <button class="three-mat-btn active" onclick="switchShoeMaterial('sport')">
+                    <i class="fa-solid fa-person-running"></i> Sport Sneaker (Neon)
+                </button>
+                <button class="three-mat-btn" onclick="switchShoeMaterial('leather')">
+                    <i class="fa-solid fa-briefcase"></i> Classic Leather (Brown)
+                </button>
+                <button class="three-mat-btn" onclick="switchShoeMaterial('custom')">
+                    <i class="fa-solid fa-palette"></i> Custom Street Art
+                </button>
+                <button class="three-mat-btn" onclick="toggle3DRotation()">
+                    <i class="fa-solid fa-rotate"></i> Auto-Spin Toggle
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Grid -->
-    <section class="section" style="padding-top: 0;">
+    <section class="section" style="padding-top: 20px;">
+        <div class="section-header">
+            <div class="pill-badge"><i class="fa-solid fa-layer-group"></i> Service Options</div>
+            <h2 class="section-title">Professional Footwear Restoration</h2>
+            <p class="section-subtitle">Select from doorstep repair, custom sneaker painting, resoling, and deep wash services.</p>
+        </div>
+
         <div class="cards-grid">
             <div class="service-card-modern">
                 <div class="card-img-container">
@@ -90,11 +128,12 @@
     <!-- Footer -->
     <footer class="footer-modern">
         <div class="footer-bottom" style="border: none; padding: 0;">
-            <p>&copy; 2026 ShoeSure Services Catalog. All Rights Reserved.</p>
+            <p>&copy; 2026 ShoeSure 3D Services Studio. All Rights Reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="../js/main.js"></script>
+    <script src="../js/three-shoe-animation.js"></script>
 </body>
 </html>
