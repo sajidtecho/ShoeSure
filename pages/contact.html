@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ShoeSure</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo" onclick="window.location.href='../index.html'">
+            <i class="fa-solid fa-shoe-prints"></i> ShoeSure
+        </div>
+        
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing-commission.html">Pricing & Commission</a>
+            <a href="contact.html" class="active">Contact Us</a>
+            <a href="live-chat.html">Live Chat</a>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
+            <button class="btn btn-primary" onclick="window.location.href='register.html'">Register</button>
+        </div>
+
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="seller-hero">
+        <h1>Contact ShoeSure Support</h1>
+        <p>Have questions about your order, seller registration, or shoe repairs? Send us a message below.</p>
+    </section>
+
+    <!-- Contact Form Container -->
+    <main class="form-container" style="max-width: 500px;">
+        <h2>Get in Touch</h2>
+        <form id="contactForm" style="margin-top: 20px;">
+            <input type="text" id="contact-name" placeholder="Your Name" required>
+            <input type="email" id="contact-email" placeholder="Your Email Address" required>
+            <textarea id="contact-message" placeholder="Describe your query or custom shoe requirement..." rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </main>
+
+    <!-- Popup Modal -->
+    <div id="overlay" class="popup-overlay"></div>
+    <div id="thankYouPopup" class="popup">
+        <i class="fa-solid fa-circle-check fa-3x" style="color: #2e7d32; margin-bottom: 15px;"></i>
+        <h2>Thank You!</h2>
+        <p style="margin-top: 10px; color: var(--text-muted);">Your inquiry has been submitted successfully. Our support team or cobbler artisan will get back to you shortly.</p>
+        <button class="btn btn-primary" style="margin-top: 20px;" onclick="closePopupModal()">Close</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ShoeSure Support</h4>
+                <p style="font-size: 14px;">We are here to assist cobblers, vendors, and customers 24/7.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="live-chat.html">Live Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Details</h4>
+                <ul>
+                    <li>Email: support@shoesure.com</li>
+                    <li>Timing: 24/7 Online Support</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShoeSure Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("thankYouPopup").style.display = "block";
+        });
+
+        function closePopupModal() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("thankYouPopup").style.display = "none";
+            window.location.href = "../index.html";
+        }
+    </script>
+</body>
+</html>
