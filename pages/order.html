@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order - ShoeSure</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo" onclick="window.location.href='../index.html'">
+            <i class="fa-solid fa-shoe-prints"></i> ShoeSure
+        </div>
+        
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="order.html" class="active">Place Order</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
+            <button class="btn btn-primary" onclick="window.location.href='register.html'">Register</button>
+        </div>
+
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="seller-hero">
+        <h1>Place Your Footwear or Repair Order</h1>
+        <p>Enter your service or product specifications below to connect with local cobblers and vendors.</p>
+    </section>
+
+    <!-- Order Form Container -->
+    <main class="form-container" style="max-width: 550px;">
+        <h2>Order Information</h2>
+        
+        <form id="order-form" style="margin-top: 20px; text-align: left;">
+            <label style="font-weight: bold; font-size: 14px;">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label style="font-weight: bold; font-size: 14px; margin-top: 10px; display: block;">Service / Product Type:</label>
+            <select id="service-type" name="service_type" required>
+                <option value="renovation">Shoe Renovation & Repair</option>
+                <option value="customization">Custom Painting & Artwork</option>
+                <option value="resole">Sole Replacement & Stitching</option>
+                <option value="cleaning">Deep Wash & Polish</option>
+                <option value="purchase">Buy New Footwear</option>
+            </select>
+            
+            <label style="font-weight: bold; font-size: 14px; margin-top: 10px; display: block;">Select Shoe Size (UK/IND):</label>
+            <select id="size" name="size" required>
+                <option value="6">Size 6</option>
+                <option value="7">Size 7</option>
+                <option value="8">Size 8</option>
+                <option value="9">Size 9</option>
+                <option value="10">Size 10</option>
+                <option value="11">Size 11</option>
+            </select>
+            
+            <label style="font-weight: bold; font-size: 14px; margin-top: 10px; display: block;">Delivery Address:</label>
+            <textarea id="address" name="address" placeholder="Enter street address, city, pincode..." rows="4" required></textarea>
+            
+            <button type="submit" class="btn btn-primary" style="margin-top: 15px; width: 100%;">Confirm & Place Order</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ShoeSure Orders</h4>
+                <p style="font-size: 14px;">Safe doorstep pickups and deliveries across India.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="live-chat.html">Live Order Chat</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShoeSure Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Order placed successfully! A ShoeSure representative will contact you for pickup.");
+            window.location.href = "../index.html";
+        });
+    </script>
+</body>
+</html>

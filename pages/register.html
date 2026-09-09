@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - ShoeSure</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo" onclick="window.location.href='../index.html'">
+            <i class="fa-solid fa-shoe-prints"></i> ShoeSure
+        </div>
+        
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
+        </div>
+
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Register Container -->
+    <main class="form-container" style="max-width: 450px; margin-top: 50px;">
+        <i class="fa-solid fa-user-plus fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
+        <h2>Create Account</h2>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Join ShoeSure as a Buyer, Cobbler, or Seller</p>
+
+        <form id="register-form">
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+            <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <input type="text" id="contact" name="contact" placeholder="Phone Number" required>
+            <input type="password" id="password" name="password" placeholder="Create Password" required>
+
+            <button type="submit" class="btn btn-primary">Register Now</button>
+        </form>
+
+        <p style="margin-top: 20px; font-size: 14px;">
+            Already have an account? <a href="login.html">Login here</a>
+        </p>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+</html>
