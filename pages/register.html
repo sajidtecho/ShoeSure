@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - ShoeSure</title>
+    <title>Register Account - ShoeSure</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body style="background: radial-gradient(circle at 50% 20%, rgba(121, 40, 202, 0.08) 0%, transparent 50%), var(--bg-main);">
 
-    <!-- Navbar -->
+    <!-- Sticky Glass Navbar -->
     <nav class="navbar">
         <div class="logo" onclick="window.location.href='../index.html'">
             <i class="fa-solid fa-shoe-prints"></i> ShoeSure
@@ -21,11 +21,11 @@
             <a href="../index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="how-it-works.html">How It Works</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Contact Support</a>
         </div>
 
-        <div class="buttons">
-            <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
+        <div class="nav-actions">
+            <button class="btn btn-outline" onclick="window.location.href='login.html'">Sign In</button>
         </div>
 
         <div class="hamburger">
@@ -35,25 +35,47 @@
         </div>
     </nav>
 
-    <!-- Register Container -->
-    <main class="form-container" style="max-width: 450px; margin-top: 50px;">
-        <i class="fa-solid fa-user-plus fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-        <h2>Create Account</h2>
-        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Join ShoeSure as a Buyer, Cobbler, or Seller</p>
+    <!-- Register Form Container -->
+    <section class="section">
+        <div class="form-card" style="max-width: 480px; text-align: center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(121, 40, 202, 0.1); color: var(--accent-purple); display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px;">
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
 
-        <form id="register-form">
-            <input type="text" id="name" name="name" placeholder="Full Name" required>
-            <input type="email" id="email" name="email" placeholder="Email Address" required>
-            <input type="text" id="contact" name="contact" placeholder="Phone Number" required>
-            <input type="password" id="password" name="password" placeholder="Create Password" required>
+            <h2 style="font-size: 28px; margin-bottom: 6px;">Create an Account</h2>
+            <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 28px;">Join ShoeSure as a Customer, Cobbler, or Seller</p>
 
-            <button type="submit" class="btn btn-primary">Register Now</button>
-        </form>
+            <form id="register-form">
+                <div class="form-group">
+                    <label class="form-label" for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                </div>
 
-        <p style="margin-top: 20px; font-size: 14px;">
-            Already have an account? <a href="login.html">Login here</a>
-        </p>
-    </main>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="contact">Phone Number</label>
+                    <input type="text" id="contact" name="contact" class="form-control" placeholder="+91 9876543210" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Create Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; margin-top: 10px;">
+                    Create Account <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <p style="margin-top: 24px; font-size: 14px; color: var(--text-secondary);">
+                Already have an account? <a href="login.html" style="font-weight: 700; color: var(--primary);">Sign In here</a>
+            </p>
+        </div>
+    </section>
 
     <!-- Scripts -->
     <script src="../js/main.js"></script>
