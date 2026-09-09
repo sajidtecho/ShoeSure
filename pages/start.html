@@ -9,40 +9,128 @@
     <link rel="stylesheet" href="../css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body style="background: radial-gradient(circle at 50% 30%, rgba(255, 0, 122, 0.1) 0%, transparent 60%), var(--bg-main);">
+<body style="background: radial-gradient(circle at 50% 10%, rgba(255, 0, 122, 0.08) 0%, transparent 50%), var(--bg-main);">
 
     <!-- Sticky Glass Navbar -->
     <nav class="navbar">
         <div class="logo" onclick="window.location.href='../index.html'">
             <i class="fa-solid fa-shoe-prints"></i> ShoeSure
         </div>
+        
         <div class="nav-links">
             <a href="../index.html">Home</a>
             <a href="services.html">Services</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing-commission.html">Pricing & Commission</a>
             <a href="seller.html">Become a Seller</a>
+            <a href="contact.html">Contact Support</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="btn btn-outline" onclick="window.location.href='login.html'">
+                <i class="fa-solid fa-right-to-bracket"></i> Sign In
+            </button>
+        </div>
+
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     </nav>
 
-    <!-- Start Gateway Card -->
-    <section class="section">
-        <div class="form-card" style="max-width: 480px; text-align: center; margin-top: 40px;">
-            <div style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 20px; box-shadow: var(--shadow-glow);">
-                <i class="fa-solid fa-shoe-prints"></i>
-            </div>
-            
-            <h2 style="font-size: 32px; margin-bottom: 8px;">Welcome to ShoeSure</h2>
-            <p style="color: var(--text-secondary); font-size: 15px; margin-bottom: 30px;">Select an option to access your account or register a new one.</p>
+    <!-- Header Banner -->
+    <header class="hero" style="padding: 60px 5% 40px; text-align: center;">
+        <div style="max-width: 720px; margin: 0 auto;">
+            <div class="pill-badge"><i class="fa-solid fa-compass"></i> Welcome Gateway</div>
+            <h1 class="hero-title" style="font-size: 46px;">Choose Your <span>Journey</span></h1>
+            <p class="hero-subtitle">Whether you want to repair your shoes, offer master cobbler services, or sell footwear online with 0% commission — we have a tailored path for you.</p>
+        </div>
+    </header>
 
-            <div style="display: flex; flex-direction: column; gap: 14px;">
-                <a href="register.html" class="btn btn-primary" style="padding: 14px;">
-                    <i class="fa-solid fa-user-plus"></i> Create New Account
-                </a>
-                <a href="login.html" class="btn btn-outline" style="padding: 14px;">
-                    <i class="fa-solid fa-right-to-bracket"></i> Sign In to Account
+    <!-- Persona Selector Cards Section -->
+    <section class="section" style="padding-top: 10px;">
+        <div class="cards-grid" style="max-width: 1240px; margin: 0 auto;">
+            
+            <!-- Persona 1: Customer / Buyer -->
+            <div class="persona-card">
+                <div class="persona-icon-box">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div style="font-size: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">For Buyers</div>
+                <h3 style="font-size: 24px; margin-bottom: 10px;">I Want Shoe Services & Footwear</h3>
+                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">Book shoe repairs, request custom hand-painted sneaker art, or shop handcrafted footwear.</p>
+                
+                <ul class="persona-feature-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Doorstep repair pickup & delivery</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Custom painting & sneaker artwork</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Direct chat with verified cobblers</li>
+                </ul>
+
+                <a href="register.html" class="btn btn-primary" style="margin-top: auto; width: 100%;">
+                    Continue as Customer <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
+
+            <!-- Persona 2: Cobbler / Artisan -->
+            <div class="persona-card" style="border-color: rgba(121, 40, 202, 0.3);">
+                <div class="persona-icon-box" style="background: rgba(121, 40, 202, 0.1); color: var(--accent-purple);">
+                    <i class="fa-solid fa-hammer"></i>
+                </div>
+                <div style="font-size: 12px; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">For Cobblers</div>
+                <h3 style="font-size: 24px; margin-bottom: 10px;">I Am a Shoe Artisan / Cobbler</h3>
+                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">Showcase your repair craftsmanship, take direct video calls and orders, and keep 100% of your earnings.</p>
+                
+                <ul class="persona-feature-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Showcase repair skills & portfolio</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 100% of service payout kept</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Live chat & video consultations</li>
+                </ul>
+
+                <a href="register.html" class="btn btn-secondary" style="margin-top: auto; width: 100%;">
+                    Join Artisan Network <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Persona 3: Shoe Seller / Vendor -->
+            <div class="persona-card" style="border-color: rgba(0, 112, 243, 0.3);">
+                <div class="persona-icon-box" style="background: rgba(0, 112, 243, 0.1); color: var(--accent-blue);">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <div style="font-size: 12px; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">For Shoe Sellers</div>
+                <h3 style="font-size: 24px; margin-bottom: 10px;">I Want to Sell Shoes Online</h3>
+                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">Register your store on ShoeSure, list catalogs, and ship to 19,000+ pincodes at 0% commission.</p>
+                
+                <ul class="persona-feature-list">
+                    <li><i class="fa-solid fa-circle-check"></i> 0% Commission & zero listing fees</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 19,000+ delivery pincodes</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 3 to 7 days fast bank payouts</li>
+                </ul>
+
+                <a href="seller.html" class="btn btn-primary" style="margin-top: auto; width: 100%; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%); border: none;">
+                    Register Store (0% Fee) <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Quick Login Footer Banner -->
+        <div style="max-width: 600px; margin: 50px auto 0; text-align: center; background: #ffffff; padding: 24px 30px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+            <p style="font-size: 15px; color: var(--text-secondary);">
+                Already have a ShoeSure account? 
+                <a href="login.html" style="font-weight: 700; color: var(--primary); margin-left: 6px;">
+                    Sign In to Dashboard &rarr;
+                </a>
+            </p>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div class="footer-bottom" style="border: none; padding: 0;">
+            <p>&copy; 2026 ShoeSure Onboarding Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="../js/main.js"></script>

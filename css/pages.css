@@ -116,6 +116,67 @@
     color: var(--primary);
 }
 
+/* Onboarding Persona Selector Cards */
+.persona-card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 35px 28px;
+    border: 2px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.persona-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.persona-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, rgba(255, 0, 122, 0.1) 0%, rgba(121, 40, 202, 0.1) 100%);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 24px;
+    transition: var(--transition);
+}
+
+.persona-card:hover .persona-icon-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+    color: #ffffff;
+    box-shadow: var(--shadow-glow);
+}
+
+.persona-feature-list {
+    list-style: none;
+    margin: 20px 0 30px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.persona-feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.persona-feature-list li i {
+    color: #10b981;
+    font-size: 14px;
+}
+
 /* Modern Form Containers */
 .form-card {
     background: #ffffff;
