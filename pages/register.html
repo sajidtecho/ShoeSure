@@ -62,11 +62,20 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label" for="password">Create Password</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+                    <label class="form-label" for="role">Select Your Role</label>
+                    <select id="role" name="role" class="form-control" required>
+                        <option value="customer">Customer / Shoe Buyer</option>
+                        <option value="artisan">Artisan Cobbler / Repair Specialist</option>
+                        <option value="seller">Shoe Seller / Store Vendor (0% Fee)</option>
+                    </select>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; margin-top: 10px;">
+                <div class="form-group">
+                    <label class="form-label" for="password">Create Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Minimum 6 characters" required>
+                </div>
+
+                <button type="submit" id="register-btn" class="btn btn-primary" style="width: 100%; padding: 14px; margin-top: 10px;">
                     Create Account <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </form>
