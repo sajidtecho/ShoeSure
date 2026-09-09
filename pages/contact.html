@@ -7,11 +7,11 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Sticky Glass Navbar -->
     <nav class="navbar">
         <div class="logo" onclick="window.location.href='../index.html'">
             <i class="fa-solid fa-shoe-prints"></i> ShoeSure
@@ -22,11 +22,11 @@
             <a href="services.html">Services</a>
             <a href="how-it-works.html">How It Works</a>
             <a href="pricing-commission.html">Pricing & Commission</a>
-            <a href="contact.html" class="active">Contact Us</a>
+            <a href="contact.html" class="active">Contact Support</a>
             <a href="live-chat.html">Live Chat</a>
         </div>
 
-        <div class="buttons">
+        <div class="nav-actions">
             <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
             <button class="btn btn-primary" onclick="window.location.href='register.html'">Register</button>
         </div>
@@ -38,57 +38,84 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <section class="seller-hero">
-        <h1>Contact ShoeSure Support</h1>
-        <p>Have questions about your order, seller registration, or shoe repairs? Send us a message below.</p>
+    <!-- Contact Header -->
+    <header class="hero" style="padding: 60px 5% 40px; text-align: center;">
+        <div style="max-width: 650px; margin: 0 auto;">
+            <div class="pill-badge"><i class="fa-solid fa-headset"></i> 24/7 Support Desk</div>
+            <h1 class="hero-title" style="font-size: 42px;">How Can We <span>Help You?</span></h1>
+            <p class="hero-subtitle">Have questions about an order, seller registration, or shoe repairs? Send us a message or chat with our team directly.</p>
+        </div>
+    </header>
+
+    <!-- Contact Form & Info Grid -->
+    <section class="section" style="padding-top: 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto;">
+            
+            <!-- Contact Info Box -->
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+                <div style="background: #ffffff; padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 0, 122, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 15px;">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3 style="font-size: 20px; margin-bottom: 6px;">Email Support</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Reach our dedicated team directly at:</p>
+                    <a href="mailto:support@shoesure.com" style="font-weight: 700; color: var(--primary); font-size: 16px; margin-top: 6px; display: inline-block;">support@shoesure.com</a>
+                </div>
+
+                <div style="background: #ffffff; padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(121, 40, 202, 0.1); color: var(--accent-purple); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 15px;">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 style="font-size: 20px; margin-bottom: 6px;">Instant Live Chat</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Connect with an online assistant or master cobbler in real-time.</p>
+                    <a href="live-chat.html" class="btn btn-primary" style="margin-top: 15px; width: 100%;">
+                        Start Live Chat <i class="fa-solid fa-paper-plane"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Form Card -->
+            <div class="form-card" style="margin: 0; max-width: 100%;">
+                <h2 style="font-size: 26px; margin-bottom: 8px;">Send a Message</h2>
+                <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 25px;">Fill out your query and our team will get back to you within 24 hours.</p>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="contact-name">Full Name</label>
+                        <input type="text" id="contact-name" class="form-control" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" class="form-control" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="contact-message">Message or Query</label>
+                        <textarea id="contact-message" class="form-control" placeholder="Describe your shoe renovation, order details, or seller inquiry..." rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
+                        Submit Message <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
     </section>
 
-    <!-- Contact Form Container -->
-    <main class="form-container" style="max-width: 500px;">
-        <h2>Get in Touch</h2>
-        <form id="contactForm" style="margin-top: 20px;">
-            <input type="text" id="contact-name" placeholder="Your Name" required>
-            <input type="email" id="contact-email" placeholder="Your Email Address" required>
-            <textarea id="contact-message" placeholder="Describe your query or custom shoe requirement..." rows="5" required></textarea>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-    </main>
-
-    <!-- Popup Modal -->
-    <div id="overlay" class="popup-overlay"></div>
-    <div id="thankYouPopup" class="popup">
-        <i class="fa-solid fa-circle-check fa-3x" style="color: #2e7d32; margin-bottom: 15px;"></i>
-        <h2>Thank You!</h2>
-        <p style="margin-top: 10px; color: var(--text-muted);">Your inquiry has been submitted successfully. Our support team or cobbler artisan will get back to you shortly.</p>
-        <button class="btn btn-primary" style="margin-top: 20px;" onclick="closePopupModal()">Close</button>
+    <!-- Modal Popup -->
+    <div id="overlay" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); z-index: 1999;"></div>
+    <div id="thankYouPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #ffffff; padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); text-align: center; max-width: 420px; width: 90%; z-index: 2000; animation: fadeIn 0.3s ease;">
+        <i class="fa-solid fa-circle-check fa-4x" style="color: #10b981; margin-bottom: 20px;"></i>
+        <h2 style="font-size: 26px;">Message Sent!</h2>
+        <p style="color: var(--text-secondary); margin-top: 10px; font-size: 15px;">Thank you for contacting ShoeSure. Our support team or master cobbler will reply shortly.</p>
+        <button class="btn btn-primary" style="margin-top: 25px; width: 100%;" onclick="closePopupModal()">Return to Home</button>
     </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>ShoeSure Support</h4>
-                <p style="font-size: 14px;">We are here to assist cobblers, vendors, and customers 24/7.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="live-chat.html">Live Chat</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contact Details</h4>
-                <ul>
-                    <li>Email: support@shoesure.com</li>
-                    <li>Timing: 24/7 Online Support</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ShoeSure Inc. All Rights Reserved.</p>
+    <footer class="footer-modern">
+        <div class="footer-bottom" style="border: none; padding: 0;">
+            <p>&copy; 2026 ShoeSure Support Portal. All Rights Reserved.</p>
         </div>
     </footer>
 

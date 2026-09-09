@@ -7,11 +7,11 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Sticky Glass Navbar -->
     <nav class="navbar">
         <div class="logo" onclick="window.location.href='../index.html'">
             <i class="fa-solid fa-shoe-prints"></i> ShoeSure
@@ -23,10 +23,10 @@
             <a href="seller.html">Become a Seller</a>
             <a href="how-it-works.html">How It Works</a>
             <a href="pricing-commission.html">Pricing & Commission</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Contact Support</a>
         </div>
 
-        <div class="buttons">
+        <div class="nav-actions">
             <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
             <button class="btn btn-primary" onclick="window.location.href='register.html'">Register</button>
         </div>
@@ -38,67 +38,42 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <section class="seller-hero">
-        <h1>Shipping & Return Policies</h1>
-        <p>Hassle-free nationwide logistics, door-step pickup for shoe renovation, and transparent return handling.</p>
-    </section>
+    <!-- Header -->
+    <header class="hero" style="padding: 60px 5% 40px; text-align: center;">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <div class="pill-badge"><i class="fa-solid fa-truck"></i> Logistics & Protection</div>
+            <h1 class="hero-title">Shipping & <span>Return Policy</span></h1>
+            <p class="hero-subtitle">Fast, safe nationwide logistics with doorstep pickup and 7-day customer return guarantees.</p>
+        </div>
+    </header>
 
-    <!-- Policy Cards -->
-    <section style="padding: 60px 20px; max-width: 1000px; margin: 0 auto;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-            <div style="background: white; padding: 30px; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
-                <i class="fa-solid fa-truck-fast fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-                <h3>Nationwide Shipping</h3>
-                <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">
-                    We partner with top logistics providers covering 19,000+ pincodes across India. Doorstep pickup is available for shoe repairs and custom crafts.
-                </p>
+    <!-- Logistics Grid -->
+    <section class="section" style="padding-top: 20px;">
+        <div class="cards-grid">
+            <div class="service-card-modern">
+                <i class="fa-solid fa-truck-fast fa-3x" style="color: var(--primary); margin-bottom: 20px;"></i>
+                <h3>19,000+ Pincodes Covered</h3>
+                <p>Doorstep collection for shoe repairs and rapid courier delivery across major cities and tier 2/3 towns in India.</p>
             </div>
 
-            <div style="background: white; padding: 30px; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
-                <i class="fa-solid fa-rotate-left fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-                <h3>Return & Exchange Guarantee</h3>
-                <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">
-                    7-day easy return policy for size issues or non-customized shoes. Customized and restored items undergo quality check before dispatch.
-                </p>
+            <div class="service-card-modern">
+                <i class="fa-solid fa-rotate-left fa-3x" style="color: var(--accent-purple); margin-bottom: 20px;"></i>
+                <h3>7-Day Return Guarantee</h3>
+                <p>Hassle-free return policy for size adjustments on regular footwear items. Custom repairs undergo strict quality inspection.</p>
             </div>
 
-            <div style="background: white; padding: 30px; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
-                <i class="fa-solid fa-box-open fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-                <h3>Return to Origin (RTO)</h3>
-                <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">
-                    Our logistics partner attempts delivery 3 times. If unaccepted, the package returns to the vendor without extra return charges to sellers.
-                </p>
+            <div class="service-card-modern">
+                <i class="fa-solid fa-box-check fa-3x" style="color: var(--accent-blue); margin-bottom: 20px;"></i>
+                <h3>Zero RTO Fees</h3>
+                <p>If a package is unaccepted after 3 delivery attempts, return to origin (RTO) shipping fees are waived for sellers.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>ShoeSure</h4>
-                <p style="font-size: 14px;">Reliable footwear shipping and return network nationwide.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="seller.html">Become a Seller</a></li>
-                    <li><a href="contact.html">Contact Support</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="live-chat.html">Live Chat</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ShoeSure Inc. All Rights Reserved.</p>
+    <footer class="footer-modern">
+        <div class="footer-bottom" style="border: none; padding: 0;">
+            <p>&copy; 2026 ShoeSure Logistics. All Rights Reserved.</p>
         </div>
     </footer>
 

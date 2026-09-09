@@ -7,11 +7,11 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Sticky Glass Navbar -->
     <nav class="navbar">
         <div class="logo" onclick="window.location.href='../index.html'">
             <i class="fa-solid fa-shoe-prints"></i> ShoeSure
@@ -23,10 +23,10 @@
             <a href="seller.html">Become a Seller</a>
             <a href="how-it-works.html">How It Works</a>
             <a href="shipping-returns.html">Shipping & Returns</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Contact Support</a>
         </div>
 
-        <div class="buttons">
+        <div class="nav-actions">
             <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
             <button class="btn btn-primary" onclick="window.location.href='register.html'">Start Selling</button>
         </div>
@@ -38,91 +38,63 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <section class="seller-hero">
-        <h1>Transparent 0% Commission Pricing</h1>
-        <p>ShoeSure offers 0% commission for local artisans, cobblers, and shoe vendors. Keep 100% of your earnings!</p>
-    </section>
+    <!-- Header -->
+    <header class="hero" style="padding: 60px 5% 40px; text-align: center;">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <div class="pill-badge"><i class="fa-solid fa-tag"></i> Transparent Pricing</div>
+            <h1 class="hero-title">0% Commission For <span>Every Seller</span></h1>
+            <p class="hero-subtitle">ShoeSure offers 0% commission fees for artisans and cobblers on all handmade, custom, and restored shoe sales.</p>
+        </div>
+    </header>
 
-    <!-- Pricing Comparison Section -->
-    <section class="pricing-section">
-        <h2>Transparent Pricing Tiers</h2>
-        <p style="color: var(--text-muted); margin-bottom: 25px;">No hidden charges, no listing fees, and no surprise deductions.</p>
-
-        <table class="pricing-table">
-            <thead>
-                <tr>
-                    <th>Feature / Service</th>
-                    <th>ShoeSure Platform</th>
-                    <th>Traditional Marketplace</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Commission Rate</strong></td>
-                    <td><strong style="color: #2e7d32;">0% Commission</strong></td>
-                    <td>15% - 30% per order</td>
-                </tr>
-                <tr>
-                    <td><strong>Listing Fee</strong></td>
-                    <td><strong>Free Unlimited Listings</strong></td>
-                    <td>Pay per listing</td>
-                </tr>
-                <tr>
-                    <td><strong>Cancellation Penalties</strong></td>
-                    <td><strong>₹0 Penalty</strong></td>
-                    <td>Strict penalty fees</td>
-                </tr>
-                <tr>
-                    <td><strong>Payment Cycle</strong></td>
-                    <td><strong>3 - 7 Days Payout</strong></td>
-                    <td>15 - 30 Days Payout</td>
-                </tr>
-                <tr>
-                    <td><strong>Custom Order Requests</strong></td>
-                    <td><strong>Direct Customer Communication</strong></td>
-                    <td>Not Supported</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- Payment & Settlement Information -->
-    <section style="background: var(--light-bg); padding: 50px 20px;">
-        <div style="max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-            <h2><i class="fa-solid fa-credit-card" style="color: var(--primary-color);"></i> Secure Direct Bank Settlements</h2>
-            <p style="margin-top: 15px; color: var(--text-muted); line-height: 1.8;">
-                Your settlement balance is deposited directly into your linked bank account within 7 days of successful order delivery. Both prepaid and Cash on Delivery (COD) transactions follow this automated payment schedule.
-            </p>
+    <!-- Comparison Table Section -->
+    <section class="section" style="padding-top: 20px;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div class="pricing-table-container">
+                <table class="pricing-table-modern">
+                    <thead>
+                        <tr>
+                            <th>Platform Features</th>
+                            <th style="color: var(--primary);">ShoeSure Platform</th>
+                            <th>Traditional Marketplaces</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Commission Fee</strong></td>
+                            <td><strong style="color: #10b981; font-size: 16px;">0% Commission Rate</strong></td>
+                            <td>15% - 30% per transaction</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Catalog Listing Fee</strong></td>
+                            <td><strong style="color: #10b981;">Free Unlimited Listings</strong></td>
+                            <td>Pay per product listing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cancellation Penalty</strong></td>
+                            <td><strong style="color: #10b981;">₹0 Penalty Charges</strong></td>
+                            <td>Strict financial penalties</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Payout Cycle</strong></td>
+                            <td><strong>3 to 7 Days Direct Bank Deposit</strong></td>
+                            <td>15 to 30 Days Cycle</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custom Customer Orders</strong></td>
+                            <td><strong>Direct Live Chat & Custom Requests</strong></td>
+                            <td>Not Supported</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>ShoeSure</h4>
-                <p style="font-size: 14px;">The 0% commission platform connecting local cobblers and shoe sellers.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="seller.html">Become a Seller</a></li>
-                    <li><a href="pricing-commission.html">Pricing & Commission</a></li>
-                    <li><a href="shipping-returns.html">Shipping & Returns</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="live-chat.html">Live Chat</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ShoeSure Inc. All Rights Reserved.</p>
+    <footer class="footer-modern">
+        <div class="footer-bottom" style="border: none; padding: 0;">
+            <p>&copy; 2026 ShoeSure Pricing Portal. All Rights Reserved.</p>
         </div>
     </footer>
 

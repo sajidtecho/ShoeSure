@@ -7,11 +7,11 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Sticky Glass Navbar -->
     <nav class="navbar">
         <div class="logo" onclick="window.location.href='../index.html'">
             <i class="fa-solid fa-shoe-prints"></i> ShoeSure
@@ -23,12 +23,12 @@
             <a href="services.html">Services</a>
             <a href="pricing-commission.html">Pricing & Commission</a>
             <a href="seller.html">Become a Seller</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Contact Support</a>
         </div>
 
-        <div class="buttons">
+        <div class="nav-actions">
             <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
-            <button class="btn btn-primary" onclick="window.location.href='register.html'">Register</button>
+            <button class="btn btn-primary" onclick="window.location.href='register.html'">Get Started</button>
         </div>
 
         <div class="hamburger">
@@ -38,89 +38,42 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <section class="seller-hero">
-        <h1>How Selling & Service Requests Work on ShoeSure</h1>
-        <p>A simple step-by-step guide for cobblers, shoe sellers, and customers using the ShoeSure platform.</p>
-    </section>
-
-    <!-- Steps Overview -->
-    <section style="padding: 60px 20px; max-width: 1000px; margin: 0 auto;">
-        <h2 style="text-align: center; margin-bottom: 40px;">Simple 4-Step Process</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px;">
-            <div style="background: white; padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
-                <div style="width: 40px; height: 40px; background: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 15px;">1</div>
-                <h3>Sign Up For Free</h3>
-                <p style="font-size: 14px; color: var(--text-muted);">Register as a customer, cobbler, or seller with basic details and phone verification.</p>
-            </div>
-
-            <div style="background: white; padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
-                <div style="width: 40px; height: 40px; background: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 15px;">2</div>
-                <h3>List or Request</h3>
-                <p style="font-size: 14px; color: var(--text-muted);">Sellers list footwear catalogs; customers submit renovation/customization requests.</p>
-            </div>
-
-            <div style="background: white; padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
-                <div style="width: 40px; height: 40px; background: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 15px;">3</div>
-                <h3>Connect & Fulfill</h3>
-                <p style="font-size: 14px; color: var(--text-muted);">Chat directly with cobblers, confirm shoe specifications, and hand off for delivery or repair.</p>
-            </div>
-
-            <div style="background: white; padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
-                <div style="width: 40px; height: 40px; background: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 15px;">4</div>
-                <h3>Fast Delivery & Payout</h3>
-                <p style="font-size: 14px; color: var(--text-muted);">Receive doorstep shoe delivery; sellers & artisans get direct bank payouts.</p>
-            </div>
+    <!-- Header -->
+    <header class="hero" style="padding: 60px 5% 40px; text-align: center;">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <div class="pill-badge"><i class="fa-solid fa-route"></i> Step-by-Step Guide</div>
+            <h1 class="hero-title">How ShoeSure <span>Works</span></h1>
+            <p class="hero-subtitle">A seamless process for customers booking shoe repairs or custom art, and cobblers expanding their business.</p>
         </div>
-    </section>
+    </header>
 
-    <!-- ShoeSure Supplier & Artisan Panel Guide -->
-    <section style="background: var(--light-bg); padding: 50px 20px;">
-        <div style="max-width: 900px; margin: 0 auto; background: white; padding: 35px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
-            <h2>The ShoeSure Vendor Dashboard</h2>
-            <p style="margin-top: 15px; color: var(--text-muted); line-height: 1.8;">
-                The ShoeSure Panel is your all-in-one control center. Manage customer orders, track shoe repair job statuses, view real-time earnings, and chat directly with buyers.
-            </p>
-            
-            <div style="margin-top: 25px; background: #fff0f5; border-left: 4px solid var(--primary-color); padding: 20px; border-radius: var(--radius-sm);">
-                <h4 style="color: var(--primary-color);">Key Supplier Features:</h4>
-                <ul style="margin-top: 10px; margin-left: 20px; font-size: 14px; color: var(--text-main);">
-                    <li>Instant listing of footwear inventory</li>
-                    <li>Order status tracking & pickup scheduling</li>
-                    <li>Direct chat and video call support with buyers</li>
-                    <li>Transparent 7-day payment settlement</li>
-                </ul>
+    <!-- Steps Grid -->
+    <section class="section" style="padding-top: 20px;">
+        <div class="cards-grid">
+            <div class="service-card-modern">
+                <div style="font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 10px;">01</div>
+                <h3>Create Account</h3>
+                <p>Register for free as a customer, artisan cobbler, or shoe store vendor using basic phone verification.</p>
+            </div>
+
+            <div class="service-card-modern">
+                <div style="font-size: 32px; font-weight: 800; color: var(--accent-purple); margin-bottom: 10px;">02</div>
+                <h3>Browse or Request</h3>
+                <p>Explore footwear catalogs or submit custom shoe restoration and painting requests with photos.</p>
+            </div>
+
+            <div class="service-card-modern">
+                <div style="font-size: 32px; font-weight: 800; color: var(--accent-blue); margin-bottom: 10px;">03</div>
+                <h3>Doorstep Delivery & Pickup</h3>
+                <p>Schedule convenient doorstep pickup for repairs. Delivery logistics partner handles 19,000+ pincodes.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>ShoeSure</h4>
-                <p style="font-size: 14px;">Platform for local cobblers, shoe artisans, and sellers across India.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Navigation</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="how-it-works.html">How It Works</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="seller.html">Become a Seller</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="live-chat.html">Live Chat</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ShoeSure Inc. All Rights Reserved.</p>
+    <footer class="footer-modern">
+        <div class="footer-bottom" style="border: none; padding: 0;">
+            <p>&copy; 2026 ShoeSure Guide. All Rights Reserved.</p>
         </div>
     </footer>
 
