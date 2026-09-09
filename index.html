@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShoeSure - Platform for Cobblers & Shoe Sellers</title>
+    <title>ShoeSure - Premier Marketplace for Shoe Cobblers & Sellers</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/pages.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Sticky Glass Navbar -->
     <nav class="navbar">
         <div class="logo" onclick="window.location.href='index.html'">
             <i class="fa-solid fa-shoe-prints"></i> ShoeSure
@@ -23,28 +23,25 @@
             <a href="pages/how-it-works.html">How It Works</a>
             <a href="pages/pricing-commission.html">Pricing & Commission</a>
             <a href="pages/seller.html">Become a Seller</a>
-            <a href="pages/contact.html">Contact Us</a>
-            
-            <!-- Menu Dropdown -->
+            <a href="pages/contact.html">Contact Support</a>
+        </div>
+
+        <div class="nav-actions">
             <div class="profile-dropdown">
-                <a href="#menu">Menu <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="profile-trigger">
+                    <span>Account</span> <i class="fa-solid fa-chevron-down" style="font-size: 11px;"></i>
+                </div>
                 <div class="profile-content">
-                    <a href="pages/order.html">My Orders</a>
-                    <a href="pages/services.html">Wishlist</a>
-                    <a href="pages/pricing-commission.html">Offers & Coupons</a>
-                    <a href="pages/live-chat.html">Live Support Chat</a>
+                    <a href="pages/login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                    <a href="pages/register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
+                    <a href="pages/order.html"><i class="fa-solid fa-box"></i> My Orders</a>
+                    <a href="pages/live-chat.html"><i class="fa-solid fa-comments"></i> Live Chat</a>
                 </div>
             </div>
-
-            <!-- Profile / Account Dropdown -->
-            <div class="profile-dropdown">
-                <a href="#account">Account <i class="fa-solid fa-user"></i></a>
-                <div class="profile-content">
-                    <a href="pages/login.html">Customer Login</a>
-                    <a href="pages/seller.html">Seller Login</a>
-                    <a href="pages/register.html">Create Account</a>
-                </div>
-            </div>  
+            
+            <button class="btn btn-primary" onclick="window.location.href='pages/seller.html'">
+                <i class="fa-solid fa-store"></i> Start Selling
+            </button>
         </div>
 
         <div class="hamburger">
@@ -54,162 +51,269 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="content">
-            <h1>Step into Style, Crafted with Care!</h1>
-            <p>Connect with skilled cobblers and local sellers to design, customize, or restore your favorite footwear — all at pocket-friendly prices!</p>
-            <div class="hero-cta-group">
-                <a href="pages/services.html" class="cta-button">Explore Customization &rarr;</a>
-                <a href="pages/how-it-works.html" class="btn btn-outline" style="margin-top: 10px; margin-left: 10px;">Learn How It Works</a>
+    <!-- Hero Banner Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="pill-badge">
+                <i class="fa-solid fa-sparkles"></i> 0% Commission For Artisans & Sellers
+            </div>
+            <h1 class="hero-title">
+                Step into Style. <br><span>Crafted with Care.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Connect directly with master cobblers and footwear sellers across India to design, restore, or purchase custom handcrafted shoes at transparent prices.
+            </p>
+            <div class="hero-cta">
+                <a href="pages/services.html" class="btn btn-primary">
+                    Explore Services <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="pages/how-it-works.html" class="btn btn-outline">
+                    <i class="fa-solid fa-circle-play"></i> How It Works
+                </a>
             </div>
         </div>
-        <div class="image-section">
-            <img src="assets/images/return-image.png" alt="ShoeSure Platform">
+        <div class="hero-media">
+            <div class="hero-image-wrapper">
+                <img src="assets/images/shoesure-hero.png" alt="ShoeSure Modern Footwear Craftsmanship">
+            </div>
+        </div>
+    </header>
+
+    <!-- Core Services Grid -->
+    <section class="section">
+        <div class="section-header">
+            <div class="pill-badge"><i class="fa-solid fa-layer-group"></i> Our Craftsmanship</div>
+            <h2 class="section-title">End-to-End Footwear Solutions</h2>
+            <p class="section-subtitle">From master leather restoration to custom neon sneaker artwork, discover artisan services tailored for you.</p>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Service Card 1 -->
+            <div class="service-card-modern">
+                <div class="card-img-container">
+                    <img src="assets/images/shoe-renovation.png" alt="Shoe Renovation & Repair">
+                </div>
+                <div class="card-body">
+                    <h3>Shoe Renovation & Repair</h3>
+                    <p>Give your vintage boots, leather oxford shoes, and heels a complete rebirth with master stitching and re-soling.</p>
+                    <a href="pages/services.html" class="btn btn-outline" style="width: 100%; margin-top: auto;">
+                        Book Repair <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card-modern">
+                <div class="card-img-container">
+                    <img src="assets/images/custom-design.png" alt="Custom Shoe Painting & Artwork">
+                </div>
+                <div class="card-body">
+                    <h3>Custom Shoe Design</h3>
+                    <p>Personalize your footwear with hand-painted street art, custom colorways, initials, and designer graphics.</p>
+                    <a href="pages/services.html" class="btn btn-outline" style="width: 100%; margin-top: auto;">
+                        Request Custom Art <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card-modern">
+                <div class="card-img-container">
+                    <img src="assets/images/seller-store.png" alt="Footwear Marketplace">
+                </div>
+                <div class="card-body">
+                    <h3>Footwear Marketplace</h3>
+                    <p>Explore handcrafted footwear from local artisan cobblers and independent shoe sellers at 0% commission rates.</p>
+                    <a href="pages/seller.html" class="btn btn-outline" style="width: 100%; margin-top: auto;">
+                        Become a Seller <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Core Services Section -->
-    <section id="services" class="services">
-        <h2>Our Main Services</h2>
-        <div class="service-container">
-            <div class="service-card" onclick="window.location.href='pages/services.html'">
-                <i class="fa-solid fa-hammer fa-3x" style="color: #ff0080; margin: 15px 0;"></i>
-                <h3>Shoe Renovation</h3>
-                <p>Give your favorite pairs a fresh new life with artisan craftsmanship.</p>  
+    <!-- Top Rated Artisans Section -->
+    <section class="section dark-section">
+        <div class="section-header">
+            <div class="pill-badge" style="background: rgba(255, 255, 255, 0.1); color: var(--accent-cyan); border-color: rgba(0, 223, 216, 0.3);">
+                <i class="fa-solid fa-award"></i> Verified Artisans
             </div>
-            
-            <div class="service-card" onclick="window.location.href='pages/services.html'">
-                <i class="fa-solid fa-paintbrush fa-3x" style="color: #ff0080; margin: 15px 0;"></i>
-                <h3>Customization</h3>
-                <p>Personalize your shoes to match your unique individual style.</p>
+            <h2>Meet Our Master Cobblers</h2>
+            <p>Direct communication with top-rated shoe craftsmen boasting decades of experience.</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="artisan-card dark-card">
+                <div class="artisan-header">
+                    <div class="artisan-avatar">R</div>
+                    <div class="artisan-info">
+                        <h3>Master Ramesh</h3>
+                        <div class="badge-rating"><i class="fa-solid fa-star"></i> 4.9 (140+ Repairs)</div>
+                    </div>
+                </div>
+                <ul class="artisan-details-list">
+                    <li><i class="fa-solid fa-clock"></i> 15 Years Experience</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Greater Noida Studio</li>
+                    <li><i class="fa-solid fa-check-double"></i> Expert in Leather Sole Replacement</li>
+                </ul>
+                <div style="display: flex; gap: 10px; margin-top: auto;">
+                    <a href="pages/live-chat.html" class="btn btn-primary" style="flex: 1; padding: 10px 16px; font-size: 14px;">
+                        <i class="fa-solid fa-comments"></i> Chat Live
+                    </a>
+                    <a href="pages/contact.html" class="btn btn-glass" style="padding: 10px 16px; font-size: 14px;">
+                        <i class="fa-solid fa-envelope"></i> Contact
+                    </a>
+                </div>
             </div>
-            
-            <div class="service-card" onclick="window.location.href='pages/seller.html'">
-                <i class="fa-solid fa-store fa-3x" style="color: #ff0080; margin: 15px 0;"></i>
-                <h3>Become a Seller</h3>
-                <p>Grow your business with 0% commission on your products.</p>
+
+            <div class="artisan-card dark-card">
+                <div class="artisan-header">
+                    <div class="artisan-avatar" style="background: linear-gradient(135deg, #0070f3 0%, #00dfd8 100%);">A</div>
+                    <div class="artisan-info">
+                        <h3>Artisan Shoe Studio</h3>
+                        <div class="badge-rating"><i class="fa-solid fa-star"></i> 5.0 (95+ Customs)</div>
+                    </div>
+                </div>
+                <ul class="artisan-details-list">
+                    <li><i class="fa-solid fa-clock"></i> 10 Years Experience</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Delhi NCR</li>
+                    <li><i class="fa-solid fa-check-double"></i> Custom Sneaker Acrylic Painting</li>
+                </ul>
+                <div style="display: flex; gap: 10px; margin-top: auto;">
+                    <a href="pages/live-chat.html" class="btn btn-primary" style="flex: 1; padding: 10px 16px; font-size: 14px;">
+                        <i class="fa-solid fa-comments"></i> Chat Live
+                    </a>
+                    <a href="pages/contact.html" class="btn btn-glass" style="padding: 10px 16px; font-size: 14px;">
+                        <i class="fa-solid fa-envelope"></i> Contact
+                    </a>
+                </div>
             </div>
-            
-            <div class="service-card" onclick="window.location.href='pages/how-it-works.html'">
-                <i class="fa-solid fa-user-gear fa-3x" style="color: #ff0080; margin: 15px 0;"></i>
-                <h3>Artisans Network</h3>
-                <p>Meet top-rated shoe cobblers with decades of expertise.</p>
+
+            <div class="artisan-card dark-card">
+                <div class="artisan-header">
+                    <div class="artisan-avatar" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">C</div>
+                    <div class="artisan-info">
+                        <h3>Craftsman Footwear</h3>
+                        <div class="badge-rating"><i class="fa-solid fa-star"></i> 4.8 (210+ Orders)</div>
+                    </div>
+                </div>
+                <ul class="artisan-details-list">
+                    <li><i class="fa-solid fa-clock"></i> 12 Years Experience</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Noida Sector 18</li>
+                    <li><i class="fa-solid fa-check-double"></i> Deep Cleaning & Premium Wax Polish</li>
+                </ul>
+                <div style="display: flex; gap: 10px; margin-top: auto;">
+                    <a href="pages/live-chat.html" class="btn btn-primary" style="flex: 1; padding: 10px 16px; font-size: 14px;">
+                        <i class="fa-solid fa-comments"></i> Chat Live
+                    </a>
+                    <a href="pages/contact.html" class="btn btn-glass" style="padding: 10px 16px; font-size: 14px;">
+                        <i class="fa-solid fa-envelope"></i> Contact
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Artisans Section -->
-    <section id="top-rated-artisans" class="services" style="background: #ffffff;">
-        <h2>Top Rated Artisans</h2>
-        <div class="service-container">
-            <div class="service-card">
-                <h3>Master Cobbler Ramesh</h3>
-                <p>Specializes in leather restoration and custom soles.</p>
-                <ul style="text-align: left; margin: 15px 0 15px 25px; font-size: 13px; color: var(--text-muted);">
-                    <li>15 Years Experience</li>
-                    <li>Location: Greater Noida</li>
-                    <li>Expertise: Renovation & Stitching</li>
-                </ul>
-                <div class="interaction-buttons">
-                    <button onclick="window.location.href='pages/live-chat.html'"><i class="fa-solid fa-comments"></i> Chat</button>
-                    <button onclick="window.location.href='pages/contact.html'"><i class="fa-solid fa-envelope"></i> Contact</button>
-                </div>
+    <!-- Platform Stats Banner -->
+    <section class="section" style="background: var(--bg-main);">
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-number">11 Lakh+</div>
+                <div class="stat-label">Sellers & Cobblers Onboarded</div>
             </div>
-
-            <div class="service-card">
-                <h3>Artisan Shoe Studio</h3>
-                <p>Handmade custom sneakers and designer footwear polish.</p>
-                <ul style="text-align: left; margin: 15px 0 15px 25px; font-size: 13px; color: var(--text-muted);">
-                    <li>10 Years Experience</li>
-                    <li>Location: Delhi NCR</li>
-                    <li>Expertise: Custom Painting & Polish</li>
-                </ul>
-                <div class="interaction-buttons">
-                    <button onclick="window.location.href='pages/live-chat.html'"><i class="fa-solid fa-comments"></i> Chat</button>
-                    <button onclick="window.location.href='pages/contact.html'"><i class="fa-solid fa-envelope"></i> Contact</button>
-                </div>
+            <div class="stat-box">
+                <div class="stat-number">14 Crore+</div>
+                <div class="stat-label">Customers Across India</div>
             </div>
-
-            <div class="service-card">
-                <h3>Craftsman Footwear</h3>
-                <p>Premium heel repair, sole replacement, and re-crafting.</p>
-                <ul style="text-align: left; margin: 15px 0 15px 25px; font-size: 13px; color: var(--text-muted);">
-                    <li>12 Years Experience</li>
-                    <li>Location: Noida Sector 18</li>
-                    <li>Expertise: Sole Replacement</li>
-                </ul>
-                <div class="interaction-buttons">
-                    <button onclick="window.location.href='pages/live-chat.html'"><i class="fa-solid fa-comments"></i> Chat</button>
-                    <button onclick="window.location.href='pages/contact.html'"><i class="fa-solid fa-envelope"></i> Contact</button>
-                </div>
+            <div class="stat-box">
+                <div class="stat-number">19,000+</div>
+                <div class="stat-label">Delivery Pincodes Covered</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">0%</div>
+                <div class="stat-label">Commission Platform Rate</div>
             </div>
         </div>
     </section>
 
     <!-- Explore Shoe Categories -->
-    <section class="home" style="background-color: var(--light-bg);">
-        <h2>Explore Shoe Categories</h2>
-        <div class="shoe-category-container">
-            <div class="shoe-card" onclick="window.location.href='pages/services.html'">
-                <i class="fa-solid fa-shoe-prints fa-2x" style="color: #ff0080; margin-bottom: 10px;"></i>
+    <section class="section">
+        <div class="section-header">
+            <div class="pill-badge"><i class="fa-solid fa-grip"></i> Browse Categories</div>
+            <h2 class="section-title">Explore Footwear Categories</h2>
+            <p class="section-subtitle">Discover handcrafted collections and specialized repair categories.</p>
+        </div>
+
+        <div class="shoe-category-grid">
+            <div class="category-card" onclick="window.location.href='pages/services.html'">
+                <i class="fa-solid fa-shoe-prints"></i>
                 <h3>Slippers & Sandals</h3>
             </div>
-            <div class="shoe-card" onclick="window.location.href='pages/services.html'">
-                <i class="fa-solid fa-person-running fa-2x" style="color: #ff0080; margin-bottom: 10px;"></i>
+            <div class="category-card" onclick="window.location.href='pages/services.html'">
+                <i class="fa-solid fa-person-running"></i>
                 <h3>Running Shoes</h3>
             </div>
-            <div class="shoe-card" onclick="window.location.href='pages/services.html'">
-                <i class="fa-solid fa-user-tie fa-2x" style="color: #ff0080; margin-bottom: 10px;"></i>
-                <h3>Formal Shoes</h3>
+            <div class="category-card" onclick="window.location.href='pages/services.html'">
+                <i class="fa-solid fa-user-tie"></i>
+                <h3>Formal Leather</h3>
             </div>
-            <div class="shoe-card" onclick="window.location.href='pages/services.html'">
-                <i class="fa-solid fa-socks fa-2x" style="color: #ff0080; margin-bottom: 10px;"></i>
-                <h3>Sneakers & Casual</h3>
+            <div class="category-card" onclick="window.location.href='pages/services.html'">
+                <i class="fa-solid fa-socks"></i>
+                <h3>Sneakers & Casuals</h3>
             </div>
-        </div> 
-    </section>
-
-    <!-- About ShoeSure Mission & Vision -->
-    <section id="about" style="text-align: center; padding: 50px 20px; max-width: 900px; margin: 0 auto;">
-        <h2>About ShoeSure</h2>
-        <div style="margin-top: 25px; line-height: 1.8; color: var(--text-muted);">
-            <h3><i class="fa-solid fa-rocket" style="color: var(--primary-color);"></i> Our Mission</h3>
-            <p>At ShoeSure, we empower local cobblers by providing a dedicated digital platform to showcase their craftsmanship. We connect skilled artisans directly with customers for renovation, customization, and repair services.</p>
-
-            <h3 style="margin-top: 30px;"><i class="fa-solid fa-globe" style="color: var(--primary-color);"></i> Our Goal</h3>
-            <p>Promote authentic locally made footwear, reduce waste through expert repairs, and preserve traditional shoe artisan skills for future generations.</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>ShoeSure</h4>
-                <p style="font-size: 14px;">Connecting local cobblers and footwear sellers directly with customers across India.</p>
+    <footer class="footer-modern">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-shoe-prints"></i> ShoeSure
+                </div>
+                <p>Empowering local shoe cobblers, artisans, and sellers across India with a 0% commission digital marketplace.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/services.html">Services</a></li>
+            
+            <div>
+                <h4 class="footer-heading">Services & Marketplace</h4>
+                <ul class="footer-links">
+                    <li><a href="pages/services.html">Shoe Renovation</a></li>
+                    <li><a href="pages/services.html">Custom Painting</a></li>
                     <li><a href="pages/seller.html">Become a Seller</a></li>
-                    <li><a href="pages/how-it-works.html">How it Works</a></li>
+                    <li><a href="pages/order.html">Place an Order</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
-                <h4>Support & Policies</h4>
-                <ul>
+
+            <div>
+                <h4 class="footer-heading">Platform Guide</h4>
+                <ul class="footer-links">
+                    <li><a href="pages/how-it-works.html">How It Works</a></li>
                     <li><a href="pages/pricing-commission.html">Pricing & Commission</a></li>
                     <li><a href="pages/shipping-returns.html">Shipping & Returns</a></li>
-                    <li><a href="pages/contact.html">Contact Support</a></li>
-                    <li><a href="pages/live-chat.html">Live Chat</a></li>
+                    <li><a href="pages/start.html">Getting Started</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Account & Support</h4>
+                <ul class="footer-links">
+                    <li><a href="pages/login.html">Login</a></li>
+                    <li><a href="pages/register.html">Register</a></li>
+                    <li><a href="pages/contact.html">Contact Us</a></li>
+                    <li><a href="pages/live-chat.html">Live Chat Support</a></li>
                 </ul>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 ShoeSure Platform. All Rights Reserved.</p>
+            <p>&copy; 2026 ShoeSure Platform Inc. All Rights Reserved.</p>
+            <p>Designed with High-Performance Modern Web Standards</p>
         </div>
     </footer>
 
