@@ -7,11 +7,11 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Sticky Glass Navbar -->
     <nav class="navbar">
         <div class="logo" onclick="window.location.href='../index.html'">
             <i class="fa-solid fa-shoe-prints"></i> ShoeSure
@@ -22,10 +22,10 @@
             <a href="services.html">Services</a>
             <a href="order.html" class="active">Place Order</a>
             <a href="how-it-works.html">How It Works</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Contact Support</a>
         </div>
 
-        <div class="buttons">
+        <div class="nav-actions">
             <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
             <button class="btn btn-primary" onclick="window.location.href='register.html'">Register</button>
         </div>
@@ -37,70 +37,65 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <section class="seller-hero">
-        <h1>Place Your Footwear or Repair Order</h1>
-        <p>Enter your service or product specifications below to connect with local cobblers and vendors.</p>
-    </section>
+    <!-- Header -->
+    <header class="hero" style="padding: 50px 5% 20px; text-align: center;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div class="pill-badge"><i class="fa-solid fa-cart-flatbed"></i> Order Placement</div>
+            <h1 class="hero-title" style="font-size: 38px;">Book Service or <span>Footwear</span></h1>
+            <p class="hero-subtitle">Enter your service or repair details below to schedule doorstep pickup.</p>
+        </div>
+    </header>
 
     <!-- Order Form Container -->
-    <main class="form-container" style="max-width: 550px;">
-        <h2>Order Information</h2>
-        
-        <form id="order-form" style="margin-top: 20px; text-align: left;">
-            <label style="font-weight: bold; font-size: 14px;">Full Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    <section class="section" style="padding-top: 10px;">
+        <div class="form-card" style="max-width: 520px;">
+            <h2 style="font-size: 24px; margin-bottom: 20px;">Order & Pickup Form</h2>
+            
+            <form id="order-form">
+                <div class="form-group">
+                    <label class="form-label" for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                </div>
 
-            <label style="font-weight: bold; font-size: 14px; margin-top: 10px; display: block;">Service / Product Type:</label>
-            <select id="service-type" name="service_type" required>
-                <option value="renovation">Shoe Renovation & Repair</option>
-                <option value="customization">Custom Painting & Artwork</option>
-                <option value="resole">Sole Replacement & Stitching</option>
-                <option value="cleaning">Deep Wash & Polish</option>
-                <option value="purchase">Buy New Footwear</option>
-            </select>
-            
-            <label style="font-weight: bold; font-size: 14px; margin-top: 10px; display: block;">Select Shoe Size (UK/IND):</label>
-            <select id="size" name="size" required>
-                <option value="6">Size 6</option>
-                <option value="7">Size 7</option>
-                <option value="8">Size 8</option>
-                <option value="9">Size 9</option>
-                <option value="10">Size 10</option>
-                <option value="11">Size 11</option>
-            </select>
-            
-            <label style="font-weight: bold; font-size: 14px; margin-top: 10px; display: block;">Delivery Address:</label>
-            <textarea id="address" name="address" placeholder="Enter street address, city, pincode..." rows="4" required></textarea>
-            
-            <button type="submit" class="btn btn-primary" style="margin-top: 15px; width: 100%;">Confirm & Place Order</button>
-        </form>
-    </main>
+                <div class="form-group">
+                    <label class="form-label" for="service-type">Service or Product Category</label>
+                    <select id="service-type" name="service_type" class="form-control" required>
+                        <option value="renovation">Shoe Renovation & Restoration</option>
+                        <option value="customization">Custom Sneaker Artwork & Painting</option>
+                        <option value="resole">Sole Replacement & Re-stitching</option>
+                        <option value="cleaning">Deep Cleaning & Wax Polish</option>
+                        <option value="purchase">Buy Artisan Footwear</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="size">Shoe Size (UK / India standard)</label>
+                    <select id="size" name="size" class="form-control" required>
+                        <option value="6">UK / IND 6</option>
+                        <option value="7">UK / IND 7</option>
+                        <option value="8">UK / IND 8</option>
+                        <option value="9">UK / IND 9</option>
+                        <option value="10">UK / IND 10</option>
+                        <option value="11">UK / IND 11</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="address">Pickup / Delivery Address</label>
+                    <textarea id="address" name="address" class="form-control" placeholder="Street address, city, pincode..." rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
+                    <i class="fa-solid fa-check-circle"></i> Confirm & Schedule Pickup
+                </button>
+            </form>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>ShoeSure Orders</h4>
-                <p style="font-size: 14px;">Safe doorstep pickups and deliveries across India.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="live-chat.html">Live Order Chat</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ShoeSure Inc. All Rights Reserved.</p>
+    <footer class="footer-modern">
+        <div class="footer-bottom" style="border: none; padding: 0;">
+            <p>&copy; 2026 ShoeSure Orders Desk. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -109,7 +104,7 @@
     <script>
         document.getElementById('order-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert("Order placed successfully! A ShoeSure representative will contact you for pickup.");
+            alert("Order placed successfully! A ShoeSure courier representative will contact you for pickup.");
             window.location.href = "../index.html";
         });
     </script>
