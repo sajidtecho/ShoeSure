@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShoeSure - Premier Marketplace for Shoe Cobblers & Sellers</title>
+    <title>ShoeSure - Premier Marketplace & Doorstep Shoe Repair Platform</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/pages.css">
@@ -63,7 +63,15 @@
             <p class="hero-subtitle">
                 Connect directly with master cobblers and footwear sellers across India to design, restore, or purchase custom handcrafted shoes at transparent prices.
             </p>
-            <div class="hero-cta">
+
+            <!-- Hero Interactive Search Bar -->
+            <div class="hero-search-bar">
+                <i class="fa-solid fa-magnifying-glass" style="color: var(--text-muted); margin-right: 12px;"></i>
+                <input type="text" placeholder="Search services e.g. Leather Sole Repair, Custom Sneakers...">
+                <button class="btn btn-primary" style="padding: 10px 20px;" onclick="window.location.href='pages/services.html'">Search</button>
+            </div>
+
+            <div class="hero-cta" style="margin-top: 25px;">
                 <a href="pages/services.html" class="btn btn-primary">
                     Explore Services <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -72,12 +80,58 @@
                 </a>
             </div>
         </div>
+        
         <div class="hero-media">
             <div class="hero-image-wrapper">
                 <img src="assets/images/shoesure-hero.png" alt="ShoeSure Modern Footwear Craftsmanship">
             </div>
         </div>
     </header>
+
+    <!-- NEW SECTION: Instant Repair & Service Quote Estimator Widget -->
+    <section class="section" style="background: var(--bg-main);">
+        <div class="section-header">
+            <div class="pill-badge"><i class="fa-solid fa-calculator"></i> Price Transparency</div>
+            <h2 class="section-title">Instant Service Cost Estimator</h2>
+            <p class="section-subtitle">Select your footwear type and required service to calculate estimated prices and turnaround times instantly.</p>
+        </div>
+
+        <div class="quote-calculator-card">
+            <div class="quote-calculator-grid">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label" for="calc-shoe-type">Select Footwear Type</label>
+                    <select id="calc-shoe-type" class="form-control">
+                        <option value="sneakers">Sneakers & Casuals</option>
+                        <option value="formal">Formal Leather Oxfords</option>
+                        <option value="leather_boots">Leather Boots</option>
+                        <option value="luxury_heels">High Heels & Designer</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label" for="calc-service-type">Select Required Service</label>
+                    <select id="calc-service-type" class="form-control">
+                        <option value="cleaning">Deep Wash & Premium Polish</option>
+                        <option value="resole">Sole Replacement & Re-Stitching</option>
+                        <option value="renovation">Complete Leather Renovation</option>
+                        <option value="custom_art">Custom Acrylic Sneaker Art</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="quote-result-box">
+                <div>
+                    <div style="font-size: 13px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Estimated Cost</div>
+                    <div class="quote-price-value" id="calc-price-display">₹299</div>
+                    <div style="font-size: 13px; color: #cbd5e1; margin-top: 4px;" id="calc-time-display">2 Days Pickup to Delivery</div>
+                </div>
+
+                <a href="pages/order.html" class="btn btn-primary">
+                    Book Service Now <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Core Services Grid -->
     <section class="section">
@@ -88,7 +142,6 @@
         </div>
 
         <div class="cards-grid">
-            <!-- Service Card 1 -->
             <div class="service-card-modern">
                 <div class="card-img-container">
                     <img src="assets/images/shoe-renovation.png" alt="Shoe Renovation & Repair">
@@ -102,7 +155,6 @@
                 </div>
             </div>
 
-            <!-- Service Card 2 -->
             <div class="service-card-modern">
                 <div class="card-img-container">
                     <img src="assets/images/custom-design.png" alt="Custom Shoe Painting & Artwork">
@@ -116,7 +168,6 @@
                 </div>
             </div>
 
-            <!-- Service Card 3 -->
             <div class="service-card-modern">
                 <div class="card-img-container">
                     <img src="assets/images/seller-store.png" alt="Footwear Marketplace">
@@ -128,6 +179,86 @@
                         Become a Seller <i class="fa-solid fa-angle-right"></i>
                     </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Before & After Renovation Gallery -->
+    <section class="section" style="background: var(--bg-main);">
+        <div class="section-header">
+            <div class="pill-badge"><i class="fa-solid fa-camera-retro"></i> Transformations</div>
+            <h2 class="section-title">Before & After Restorations</h2>
+            <p class="section-subtitle">Real results from ShoeSure master cobblers reviving worn-out footwear back to brand new condition.</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="transformation-card">
+                <div class="transformation-badge-container">
+                    <div class="transformation-side">
+                        <img src="assets/images/shoe-renovation.png" alt="Before Repair">
+                        <span class="transformation-label">Worn Out</span>
+                    </div>
+                    <div class="transformation-side">
+                        <img src="assets/images/shoesure-hero.png" alt="After Repair">
+                        <span class="transformation-label after">Restored</span>
+                    </div>
+                </div>
+                <div class="transformation-body">
+                    <h3>Leather Oxford Sole Replacement</h3>
+                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 6px;">Deep leather re-crafting, sole stitching, and premium wax polish finish.</p>
+                </div>
+            </div>
+
+            <div class="transformation-card">
+                <div class="transformation-badge-container">
+                    <div class="transformation-side">
+                        <img src="assets/images/shoe-renovation.png" alt="Before Custom Art">
+                        <span class="transformation-label">Plain Sneaker</span>
+                    </div>
+                    <div class="transformation-side">
+                        <img src="assets/images/custom-design.png" alt="After Custom Art">
+                        <span class="transformation-label after">Custom Art</span>
+                    </div>
+                </div>
+                <div class="transformation-body">
+                    <h3>Custom Acrylic Sneaker Painting</h3>
+                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 6px;">Hand-painted neon design on Air Force 1 with waterproof protective coating.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: How Doorstep Service Works -->
+    <section class="section">
+        <div class="section-header">
+            <div class="pill-badge"><i class="fa-solid fa-truck-ramp-box"></i> Doorstep Convenience</div>
+            <h2 class="section-title">How Doorstep Pickup & Service Works</h2>
+            <p class="section-subtitle">Getting your footwear repaired or custom designed is as simple as ordering food online.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto;">
+            <div style="background: #ffffff; padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+                <div style="font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 12px;">01</div>
+                <h3>Book Online</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); margin-top: 6px;">Select your service, input shoe details, and schedule doorstep pickup time.</p>
+            </div>
+
+            <div style="background: #ffffff; padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+                <div style="font-size: 32px; font-weight: 800; color: var(--accent-purple); margin-bottom: 12px;">02</div>
+                <h3>Courier Pickup</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); margin-top: 6px;">Our logistics agent collects your package directly from your home address.</p>
+            </div>
+
+            <div style="background: #ffffff; padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+                <div style="font-size: 32px; font-weight: 800; color: var(--accent-blue); margin-bottom: 12px;">03</div>
+                <h3>Artisan Craftsmanship</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); margin-top: 6px;">Master cobblers restore or paint your footwear in certified studio workshops.</p>
+            </div>
+
+            <div style="background: #ffffff; padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+                <div style="font-size: 32px; font-weight: 800; color: #10b981; margin-bottom: 12px;">04</div>
+                <h3>Delivered Back</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); margin-top: 6px;">Receive your shoes back at your doorstep, packaged clean and ready to wear.</p>
             </div>
         </div>
     </section>
@@ -214,52 +345,53 @@
         </div>
     </section>
 
-    <!-- Platform Stats Banner -->
-    <section class="section" style="background: var(--bg-main);">
-        <div class="stats-grid">
-            <div class="stat-box">
-                <div class="stat-number">11 Lakh+</div>
-                <div class="stat-label">Sellers & Cobblers Onboarded</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">14 Crore+</div>
-                <div class="stat-label">Customers Across India</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">19,000+</div>
-                <div class="stat-label">Delivery Pincodes Covered</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">0%</div>
-                <div class="stat-label">Commission Platform Rate</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Explore Shoe Categories -->
+    <!-- NEW SECTION: Frequently Asked Questions (FAQ) Accordion -->
     <section class="section">
         <div class="section-header">
-            <div class="pill-badge"><i class="fa-solid fa-grip"></i> Browse Categories</div>
-            <h2 class="section-title">Explore Footwear Categories</h2>
-            <p class="section-subtitle">Discover handcrafted collections and specialized repair categories.</p>
+            <div class="pill-badge"><i class="fa-solid fa-circle-question"></i> Common Answers</div>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about doorstep repairs, pricing, and seller onboarding.</p>
         </div>
 
-        <div class="shoe-category-grid">
-            <div class="category-card" onclick="window.location.href='pages/services.html'">
-                <i class="fa-solid fa-shoe-prints"></i>
-                <h3>Slippers & Sandals</h3>
+        <div class="faq-container">
+            <div class="faq-item active">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How does doorstep shoe repair pickup work?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    When you place a repair order, a logistics courier agent collects your shoes from your doorstep. They are safely transported to certified ShoeSure cobbler workshops, repaired, and delivered back to your home address.
+                </div>
             </div>
-            <div class="category-card" onclick="window.location.href='pages/services.html'">
-                <i class="fa-solid fa-person-running"></i>
-                <h3>Running Shoes</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is the commission really 0% for sellers and cobblers?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! ShoeSure charges 0% commission fees on all products and artisan service sales. Sellers and cobblers keep 100% of their earnings with fast direct bank settlements.
+                </div>
             </div>
-            <div class="category-card" onclick="window.location.href='pages/services.html'">
-                <i class="fa-solid fa-user-tie"></i>
-                <h3>Formal Leather</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What materials are used for custom sneaker artwork?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Artisans use professional waterproof acrylic paint designed specifically for leather and canvas footwear, sealed with a scratch-resistant scratch guard topcoat.
+                </div>
             </div>
-            <div class="category-card" onclick="window.location.href='pages/services.html'">
-                <i class="fa-solid fa-socks"></i>
-                <h3>Sneakers & Casuals</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How long does a shoe restoration or repair take?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Standard cleaning and minor repair jobs take 2 to 3 days from pickup to delivery. Complete leather sole replacement and custom artwork take approximately 4 to 5 days.
+                </div>
             </div>
         </div>
     </section>
